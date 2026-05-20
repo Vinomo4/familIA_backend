@@ -9,64 +9,12 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        0,
-        0
+        192,
+        -64
       ],
-      "id": "29146a4f-7664-42a8-8621-7fdaff920d7c",
+      "id": "0b636425-29fe-4cee-83be-e1320e797657",
       "name": "Webhook",
       "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Classify the following user transcript: {{ $json.text }}",
-        "hasOutputParser": true,
-        "options": {
-          "systemMessage": "You are the central intent router for FamilIA. Your sole responsibility is to analyze the provided user text and determine the financial or operational category requested by the elderly user.\n\nStrictly classify the intent into one of the following four domains under the \"category\" key:\n- DOCUMENT: Inquiries about physical bank letters, contractual changes, or printed fee notices.\n- INTERFACE: Navigation issues inside the banking app, confusion about which button to press, or UI queries.\n- SCAM: Reports of suspicious calls, alarming SMS, coercion, sense of urgency, or emergency protocol activation.\n- MANAGEMENT: Balance checks, pension status, monthly expense reviews, or cash wallet annotations."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 3.1,
-      "position": [
-        416,
-        0
-      ],
-      "id": "261a1d3c-5840-4e95-8f85-5506c6a3f160",
-      "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "modelName": "models/gemini-2.5-flash-lite",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
-      "typeVersion": 1.1,
-      "position": [
-        80,
-        208
-      ],
-      "id": "8532d8a9-fd69-440d-9c2c-c83f3e93635f",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "schemaType": "manual",
-        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\n\t\t\t\t\"DOCUMENT\",\n\t\t\t\t\"INTERFACE\",\n\t\t\t\t\"SCAM\",\n\t\t\t\t\"MANAGEMENT\"\n\t\t\t]\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"category\"\n\t]\n}"
-      },
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "typeVersion": 1.3,
-      "position": [
-        384,
-        208
-      ],
-      "id": "77165e4b-769a-4253-b255-ecd4cd0a85ce",
-      "name": "Structured Output Parser"
     },
     {
       "parameters": {
@@ -98,10 +46,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        208,
-        0
+        416,
+        -64
       ],
-      "id": "eda04ae0-57ee-496b-92cc-59f9a9fd26ec",
+      "id": "c1fdf9d9-f70b-44c8-9a31-c26fe2f7d790",
       "name": "HTTP Request",
       "credentials": {
         "httpMultipleHeadersAuth": {
@@ -109,6 +57,58 @@
           "name": "Multiple Headers Auth account"
         }
       }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Classify the following user transcript: {{ $json.text }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the central intent router for FamilIA. Your sole responsibility is to analyze the provided user text and determine the financial or operational category requested by the elderly user.\n\nStrictly classify the intent into one of the following four domains under the \"category\" key:\n- DOCUMENT: Inquiries about physical bank letters, contractual changes, or printed fee notices.\n- INTERFACE: Navigation issues inside the banking app, confusion about which button to press, or UI queries.\n- SCAM: Reports of suspicious calls, alarming SMS, coercion, sense of urgency, or emergency protocol activation.\n- MANAGEMENT: Balance checks, pension status, monthly expense reviews, or cash wallet annotations."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        656,
+        -64
+      ],
+      "id": "693681bc-619b-4810-93e7-bb529f993a8f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        512,
+        160
+      ],
+      "id": "30451915-854e-4016-a4a9-93bc07a14b15",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\n\t\t\t\t\"DOCUMENT\",\n\t\t\t\t\"INTERFACE\",\n\t\t\t\t\"SCAM\",\n\t\t\t\t\"MANAGEMENT\"\n\t\t\t]\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"category\"\n\t]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        784,
+        160
+      ],
+      "id": "14560ef9-9192-4c16-9886-e6db50ec1c66",
+      "name": "Structured Output Parser"
     },
     {
       "parameters": {
@@ -124,7 +124,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "{{ $json.output.category }}",
+                    "leftValue": "={{ $json.output.category }}",
                     "rightValue": "DOCUMENT",
                     "operator": {
                       "type": "string",
@@ -153,8 +153,7 @@
                     "rightValue": "INTERFACE",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "equals"
                     }
                   }
                 ],
@@ -178,8 +177,7 @@
                     "rightValue": "MANAGEMENT",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "equals"
                     }
                   }
                 ],
@@ -203,8 +201,7 @@
                     "rightValue": "SCAM",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "equals"
                     }
                   }
                 ],
@@ -220,11 +217,49 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        768,
-        0
+        976,
+        -64
       ],
-      "id": "7570f385-ca33-47d8-bec6-e3769dfed798",
+      "id": "9aca4958-f1c6-4954-b256-86f9df2c5d2c",
       "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ae2b9187-5f75-4700-afca-bc8310c14101",
+              "name": "text",
+              "value": "={{ $('HTTP Request').item.json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1216,
+        64
+      ],
+      "id": "9624732c-4d9e-4704-948b-86d691813478",
+      "name": "Prepare Scam Payload"
+    },
+    {
+      "parameters": {
+        "workflowId": "qY3XsgMkJYvOh0yo",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        64
+      ],
+      "id": "2e89b432-e6b6-4419-9961-d331ff1afdd1",
+      "name": "Call 'Scam'",
+      "alwaysOutputData": false
     }
   ],
   "connections": {
@@ -233,6 +268,17 @@
         [
           {
             "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
             "type": "main",
             "index": 0
           }
@@ -272,22 +318,29 @@
         ]
       ]
     },
-    "HTTP Request": {
+    "Switch": {
       "main": [
+        [],
+        [],
+        [],
         [
           {
-            "node": "AI Agent",
+            "node": "Prepare Scam Payload",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch": {
+    "Prepare Scam Payload": {
       "main": [
-        [],
-        [],
-        []
+        [
+          {
+            "node": "Call 'Scam'",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
