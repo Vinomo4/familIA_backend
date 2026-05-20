@@ -9,10 +9,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        192,
-        -64
+        -304,
+        96
       ],
-      "id": "0b636425-29fe-4cee-83be-e1320e797657",
+      "id": "44eeccf1-61a6-452b-8d76-38f737bff95e",
       "name": "Webhook",
       "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
     },
@@ -46,11 +46,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        416,
-        -64
+        64,
+        -32
       ],
-      "id": "c1fdf9d9-f70b-44c8-9a31-c26fe2f7d790",
-      "name": "HTTP Request",
+      "id": "a5088b1f-a2db-4115-a8cc-1062f4988f86",
+      "name": "HTTP Request (STT)",
       "credentials": {
         "httpMultipleHeadersAuth": {
           "id": "wLNGcUvykTo5GOnn",
@@ -63,6 +63,7 @@
         "promptType": "define",
         "text": "=Classify the following user transcript: {{ $json.text }}",
         "hasOutputParser": true,
+        "needsFallback": true,
         "options": {
           "systemMessage": "You are the central intent router for FamilIA. Your sole responsibility is to analyze the provided user text and determine the financial or operational category requested by the elderly user.\n\nStrictly classify the intent into one of the following four domains under the \"category\" key:\n- DOCUMENT: Inquiries about physical bank letters, contractual changes, or printed fee notices.\n- INTERFACE: Navigation issues inside the banking app, confusion about which button to press, or UI queries.\n- SCAM: Reports of suspicious calls, alarming SMS, coercion, sense of urgency, or emergency protocol activation.\n- MANAGEMENT: Balance checks, pension status, monthly expense reviews, or cash wallet annotations."
         }
@@ -70,44 +71,24 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        656,
-        -64
+        288,
+        -32
       ],
-      "id": "693681bc-619b-4810-93e7-bb529f993a8f",
-      "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "modelName": "models/gemini-2.5-flash-lite",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
-      "typeVersion": 1.1,
-      "position": [
-        512,
-        160
-      ],
-      "id": "30451915-854e-4016-a4a9-93bc07a14b15",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "cfaec158-859d-43c3-992d-5c5e4f2321ca",
+      "name": "Router AI Agent"
     },
     {
       "parameters": {
         "schemaType": "manual",
-        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\n\t\t\t\t\"DOCUMENT\",\n\t\t\t\t\"INTERFACE\",\n\t\t\t\t\"SCAM\",\n\t\t\t\t\"MANAGEMENT\"\n\t\t\t]\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"category\"\n\t]\n}"
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"DOCUMENT\", \"INTERFACE\", \"SCAM\", \"MANAGEMENT\"]\n\t\t}\n\t},\n\t\"required\": [\"category\"]\n}"
       },
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        784,
-        160
+        416,
+        192
       ],
-      "id": "14560ef9-9192-4c16-9886-e6db50ec1c66",
+      "id": "e5729bc6-2b49-486f-9deb-4dbb6b4ea108",
       "name": "Structured Output Parser"
     },
     {
@@ -129,8 +110,7 @@
                     "operator": {
                       "type": "string",
                       "operation": "equals"
-                    },
-                    "id": "267fc904-a656-42e9-b705-3fa888834bf8"
+                    }
                   }
                 ],
                 "combinator": "and"
@@ -148,7 +128,6 @@
                 },
                 "conditions": [
                   {
-                    "id": "36090db0-9ea8-4d59-a43a-469aefab4aa2",
                     "leftValue": "={{ $json.output.category }}",
                     "rightValue": "INTERFACE",
                     "operator": {
@@ -172,7 +151,6 @@
                 },
                 "conditions": [
                   {
-                    "id": "7a8b0f7a-758a-43ae-a377-be108ef192b5",
                     "leftValue": "={{ $json.output.category }}",
                     "rightValue": "MANAGEMENT",
                     "operator": {
@@ -196,7 +174,6 @@
                 },
                 "conditions": [
                   {
-                    "id": "6d107eaf-abe4-41d3-9927-93ec7cc5cf0a",
                     "leftValue": "={{ $json.output.category }}",
                     "rightValue": "SCAM",
                     "operator": {
@@ -217,20 +194,19 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        976,
-        -64
+        544,
+        -32
       ],
-      "id": "9aca4958-f1c6-4954-b256-86f9df2c5d2c",
-      "name": "Switch"
+      "id": "675adb41-7162-4196-ab6d-0fc471c9d04a",
+      "name": "Switch Intents"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "ae2b9187-5f75-4700-afca-bc8310c14101",
               "name": "text",
-              "value": "={{ $('HTTP Request').item.json.text }}",
+              "value": "={{ $('HTTP Request (STT)').item.json.text }}",
               "type": "string"
             }
           ]
@@ -240,11 +216,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1216,
-        64
+        768,
+        192
       ],
-      "id": "9624732c-4d9e-4704-948b-86d691813478",
-      "name": "Prepare Scam Payload"
+      "id": "2470bd49-9c93-483d-a980-93c7aaa32f76",
+      "name": "Prepare Scam Payload (Voice)"
     },
     {
       "parameters": {
@@ -254,12 +230,86 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1,
       "position": [
-        1424,
-        64
+        976,
+        192
       ],
-      "id": "2e89b432-e6b6-4419-9961-d331ff1afdd1",
-      "name": "Call 'Scam'",
+      "id": "76594ead-e22c-44c3-aecf-f0c605b317a2",
+      "name": "Call 'Scam' (Voice)",
       "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "workflowId": "oeDjuaP0lQKdJgdn",
+        "options": {}
+      },
+      "id": "eca30902-3d65-4a92-9b0c-8a922007a61c",
+      "name": "Call 'C1_Document' (Image)",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        64,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $binary && $binary.audio ? true : false }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "e9b132f5-415d-4027-af71-6aa1092682bb",
+      "name": "Audio file?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        192
+      ],
+      "id": "caba7541-1c07-495a-ad1a-c31ef98aee19",
+      "name": "Gemini 3.1 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        192
+      ],
+      "id": "88dcf558-88fd-4485-90b8-a0c31ae5a065",
+      "name": "Gemini 2.5 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     }
   ],
   "connections": {
@@ -267,41 +317,30 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "Audio file?",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request": {
+    "HTTP Request (STT)": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "Router AI Agent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "AI Agent": {
+    "Router AI Agent": {
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Switch Intents",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Google Gemini Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
             "index": 0
           }
         ]
@@ -311,34 +350,74 @@
       "ai_outputParser": [
         [
           {
-            "node": "AI Agent",
+            "node": "Router AI Agent",
             "type": "ai_outputParser",
             "index": 0
           }
         ]
       ]
     },
-    "Switch": {
+    "Switch Intents": {
       "main": [
         [],
         [],
         [],
         [
           {
-            "node": "Prepare Scam Payload",
+            "node": "Prepare Scam Payload (Voice)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Prepare Scam Payload": {
+    "Prepare Scam Payload (Voice)": {
       "main": [
         [
           {
-            "node": "Call 'Scam'",
+            "node": "Call 'Scam' (Voice)",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio file?": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (STT)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'C1_Document' (Image)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 3.1 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
           }
         ]
       ]

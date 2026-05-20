@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "262ae787-2ebd-4f07-915e-f62bddee42cb",
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "id": "b298d944-0871-4595-9a06-7ec6f8514f02",
+              "name": "spoke",
+              "value": "SCAM_DETECTION",
+              "type": "string"
+            },
+            {
+              "id": "2eca1f5e-fac4-4eb9-bd48-654e7690a651",
+              "name": "=evaluation.risk_score",
+              "value": "={{ $json.output.risk_score }}",
+              "type": "number"
+            },
+            {
+              "id": "c7a809fd-a759-4abc-95c6-524f7bbf708d",
+              "name": "=evaluation.risk_level",
+              "value": "={{ $json.output.risk_score >= 75 ? 'ALTO' : ($json.output.risk_score >= 40 ? 'MEDIO' : 'BAJO') }}",
+              "type": "string"
+            },
+            {
+              "id": "52cf2250-e5a1-4fc6-9f78-752b0163e28b",
+              "name": "=evaluation.brief_explanation",
+              "value": "={{ $json.output.brief_explanation }}",
+              "type": "string"
+            },
+            {
+              "id": "2b2186ff-24d2-468a-8dc1-181151d81a4e",
+              "name": "=evaluation.user_defense_guidance",
+              "value": "={{ $json.output.user_defense_guidance }}",
+              "type": "string"
+            },
+            {
+              "id": "a298ceea-dc20-4b8a-9a7e-41dbd44a8088",
+              "name": "evaluation.coercion_tactics",
+              "value": "={{ $json.output.coercion_tactics }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -960,
+        192
+      ],
+      "id": "92a574d9-f87f-4e91-8d1c-e867eba7a063",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"risk_score\": {\n\t\t\t\"type\": \"integer\",\n\t\t\t\"minimum\": 0,\n\t\t\t\"maximum\": 100\n\t\t},\n\t\t\"brief_explanation\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"user_defense_guidance\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"coercion_tactics\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"risk_score\",\n\t\t\"brief_explanation\",\n\t\t\"user_defense_guidance\",\n\t\t\"coercion_tactics\"\n\t]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1168,
+        400
+      ],
+      "id": "2c69f840-fb10-4a55-87e8-49fa236aa7ee",
+      "name": "Scam Output Schema"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Evaluate the following text for potential security scams or coercion tactics: {{ $json.text }}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "Act as an expert analyst in cognitive security and social engineering detection for elderly users. Your objective is to evaluate the transcribed text of a conversation or phone call and calculate a coercion index or scam risk score (0-100).\n\nStrictly analyze the text for the following risk patterns:\n1. Artificial urgency (e.g., 'you must do this right now', 'it is urgent').\n2. Requests for sensitive data (e.g., credentials, security tokens, SMS verification codes, or PINs).\n3. Latent or explicit threats (e.g., 'your account will be frozen', 'legal action', 'fines').\n4. Impersonation of authority figures (e.g., fake tech support, bank representatives, police officers).\n\nYou must strictly map the final output to the provided JSON schema. Ensure that:\n- 'risk_score' is an integer from 0 to 100.\n- 'brief_explanation' is a concise, neutral summary in Spanish for the family member's dashboard audit log, explaining the objective threat detected.\n- 'user_defense_guidance' is written in Spanish, specifically tailored for an elderly person experiencing high anxiety. Use short, calm, and reassuring sentences. Avoid all technical jargon (never use words like 'phishing', 'token', 'link', 'SMS', or 'malware'). Give clear, protective, and non-alarmist instructions (e.g., 'No te preocupes, no has hecho nada malo. Cuelga el teléfono tranquilamente. No les digas ningún número').\n- 'coercion_tactics' is an array of strings listing the identified patterns in Spanish (e.g., 'Urgencia temporal', 'Petición de claves')."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1312,
+        192
+      ],
+      "id": "2fdb1ed1-dac1-4dcd-8d8e-fa11461a55df",
+      "name": "NLP Coercion Scorer"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        192
+      ],
+      "id": "64ed15dd-4654-4571-8783-1a277f7e6aa4",
+      "name": "Execute Workflow Trigger"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1488,
+        432
+      ],
+      "id": "bce48948-9978-4cd3-ac26-3af5130903b0",
+      "name": "Gemini 3.1 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1312,
+        480
+      ],
+      "id": "cd214e38-fcf3-478f-8f32-fab13bb750fd",
+      "name": "Gemini 2.5 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Scam Output Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "NLP Coercion Scorer",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NLP Coercion Scorer": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "NLP Coercion Scorer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 3.1 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "NLP Coercion Scorer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "NLP Coercion Scorer",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
+  }
+}

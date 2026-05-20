@@ -1,0 +1,281 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "5986fe65-d8ae-4f3a-959c-0a9f795b8f53",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1984,
+        736
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1856,
+        944
+      ],
+      "id": "cea31b5b-635c-4e29-a2e2-fd99478e6456",
+      "name": "Gemini 3.1 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.output.risk_score }}",
+              "operation": "largerEqual",
+              "value2": 50
+            }
+          ]
+        }
+      },
+      "id": "be884a26-2af3-4fd2-be15-184a103d8b9a",
+      "name": "Is Scam?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1472,
+        736
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "status",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "name": "spoke",
+              "value": "SCAM_DETECTION",
+              "type": "string"
+            },
+            {
+              "name": "texto_extraido",
+              "value": "={{ $('AI Agent').item.json.output.extracted_text }}",
+              "type": "string"
+            },
+            {
+              "name": "evaluation.risk_score",
+              "value": "={{ $('AI Agent').item.json.output.risk_score }}",
+              "type": "number"
+            },
+            {
+              "name": "evaluation.risk_level",
+              "value": "={{ $('AI Agent').item.json.output.risk_score >= 75 ? 'ALTO' : ($('AI Agent').item.json.output.risk_score >= 40 ? 'MEDIO' : 'BAJO') }}",
+              "type": "string"
+            },
+            {
+              "name": "evaluation.brief_explanation",
+              "value": "={{ $('AI Agent').item.json.output.brief_explanation }}",
+              "type": "string"
+            },
+            {
+              "name": "evaluation.user_defense_guidance",
+              "value": "={{ $('AI Agent').item.json.output.user_defense_guidance }}",
+              "type": "string"
+            },
+            {
+              "name": "evaluation.coercion_tactics",
+              "value": "={{ $('AI Agent').item.json.output.coercion_tactics }}",
+              "type": "any"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "66991b5e-ee3c-4d2a-9116-e2bc62a2fc61",
+      "name": "Scam Mapping",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1248,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Analyze the attached bank document image and populate the structured JSON schema based on its content.",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "You are an expert cognitive security analyst and financial assistant specialized in protecting elderly users from financial abuse, fraud, and social engineering. Your task is to inspect the provided image of a bank letter, statement, or fee notification.\n\nStrictly perform this single-shot analysis:\n1. Text Extraction: Extract all literal text to 'extracted_text'.\n2. Scam Risk Assessment: Evaluate the text for artificial urgency, threats, sensitive data requests, or impersonation. Assign a 'risk_score' (0-100). Identify specific 'coercion_tactics' (array of strings in Spanish, e.g., 'Urgencia temporal').\n3. If risk_score < 50: Write 'easy_explanation' in Spanish (2-3 simple sentences for an 80+ year old explaining the notice without jargon). Leave scam-related explanation fields as empty strings.\n4. If risk_score >= 50: Write a 'brief_explanation' (neutral summary in Spanish for the family audit log) and 'user_defense_guidance' (short, calm, non-technical instructions for the elderly user in Spanish). Leave 'easy_explanation' as an empty string."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1776,
+        736
+      ],
+      "id": "9ce26656-9bdf-4a03-93a0-bae92e3f7bba",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1728,
+        944
+      ],
+      "id": "d47d57ed-9c52-409f-bf6f-8f6aebf9a2d7",
+      "name": "Gemini 2.5 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QzxmHwaWUUgkEiKe",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "status",
+              "value": "success",
+              "type": "string",
+              "id": "fe9ea795-d472-4290-8321-3c3dfe5087ed"
+            },
+            {
+              "name": "spoke",
+              "value": "C1_DOCUMENT",
+              "type": "string",
+              "id": "3bc6b047-6b45-41be-9b30-40bd62c5bab7"
+            },
+            {
+              "name": "easy_explanation",
+              "value": "={{ $json.output.easy_explanation }}",
+              "type": "string",
+              "id": "904bab10-1d22-422f-82e5-713db165137c"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d0773e19-e0c1-4b63-aa4d-8ef2ae62edff",
+      "name": "Healthy Document Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1248,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"extracted_text\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"risk_score\": {\n\t\t\t\"type\": \"integer\",\n\t\t\t\"minimum\": 0,\n\t\t\t\"maximum\": 100\n\t\t},\n\t\t\"easy_explanation\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"brief_explanation\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"user_defense_guidance\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"coercion_tactics\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"extracted_text\",\n\t\t\"risk_score\",\n\t\t\"easy_explanation\",\n\t\t\"brief_explanation\",\n\t\t\"user_defense_guidance\",\n\t\t\"coercion_tactics\"\n\t]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1584,
+        976
+      ],
+      "id": "6096b8c9-e848-4fd3-a2ce-606e7efc293b",
+      "name": "Structured Output"
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 3.1 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Scam?": {
+      "main": [
+        [
+          {
+            "node": "Scam Mapping",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Healthy Document Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Is Scam?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Structured Output": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
+  }
+}
