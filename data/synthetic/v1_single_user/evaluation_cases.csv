@@ -1,0 +1,50 @@
+eval_id,user_id,input_type,input_payload,expected_intent,expected_output_type,expected_alert,kpi_target,expected_reference
+EV001,U001,text,¿Me ha llegado la pensión?,GESTION,router_classification,False,router_accuracy,I001
+EV002,U001,text,¿Cuánto dinero tengo en la cuenta?,GESTION,router_classification,False,router_accuracy,I002
+EV003,U001,text,¿Cuánto he gastado este mes en farmacia?,GESTION,router_classification,False,router_accuracy,I003
+EV004,U001,text,¿He pagado ya la luz?,GESTION,router_classification,False,router_accuracy,I004
+EV005,U001,text,¿Cuánto me queda de efectivo?,GESTION,router_classification,False,router_accuracy,I005
+EV006,U001,text,Apunta 10 euros de farmacia,GESTION,router_classification,False,router_accuracy,I006
+EV007,U001,text,He sacado 20 euros del cajero,GESTION,router_classification,False,router_accuracy,I007
+EV008,U001,text,¿Cuánto he gastado en supermercado esta semana?,GESTION,router_classification,False,router_accuracy,I008
+EV009,U001,text,¿Tengo alguna comisión este mes?,GESTION,router_classification,False,router_accuracy,I009
+EV010,U001,text,¿Cuál fue mi último movimiento?,GESTION,router_classification,False,router_accuracy,I010
+EV011,U001,text,¿Cuánto pagué de teléfono?,GESTION,router_classification,False,router_accuracy,I011
+EV012,U001,text,¿Me queda saldo suficiente para los recibos?,GESTION,router_classification,False,router_accuracy,I012
+EV013,U001,text,He sacado 60 euros del cajero,GESTION,entity_extraction,False,entity_accuracy,E001
+EV014,U001,text,Anota 50 euros para medicinas,GESTION,entity_extraction,False,entity_accuracy,E002
+EV015,U001,text,Anota 18 euros para medicinas,GESTION,entity_extraction,False,entity_accuracy,E003
+EV016,U001,text,Registra 10 euros de cafetería,GESTION,entity_extraction,False,entity_accuracy,E004
+EV017,U001,text,Anota 20 euros para medicinas,GESTION,entity_extraction,False,entity_accuracy,E005
+EV018,U001,text,He retirado 8 euros en efectivo,GESTION,entity_extraction,False,entity_accuracy,E006
+EV019,U001,text,Anota 18 euros para medicinas,GESTION,entity_extraction,False,entity_accuracy,E007
+EV020,U001,text,Anota 12 euros para medicinas,GESTION,entity_extraction,False,entity_accuracy,E008
+EV021,U001,text,¿Me ha llegado la pensión?,GESTION,financial_answer,False,financial_correctness,pension_query
+EV022,U001,text,¿Cuánto he gastado en farmacia en marzo?,GESTION,financial_answer,False,financial_correctness,category_sum
+EV023,U001,text,¿Cuál es mi saldo actual?,GESTION,financial_answer,False,financial_correctness,balance_last
+EV024,U001,text,¿Tengo alguna comisión inusual?,GESTION,financial_answer,False,financial_correctness,commission_anomaly
+EV025,U001,text,¿He tenido algún cargo duplicado?,GESTION,financial_answer,False,financial_correctness,duplicate_check
+EV026,U001,text,¿Cuánto pagué de teléfono?,GESTION,financial_answer,False,financial_correctness,phone_bill
+EV027,U001,text,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,ESTAFA,fraud_assessment,True,fraud_recall_precision,F001
+EV028,U001,text,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",ESTAFA,fraud_assessment,True,fraud_recall_precision,F002
+EV029,U001,text,Confirme su IBAN y tarjeta en este enlace para evitar el bloqueo,ESTAFA,fraud_assessment,True,fraud_recall_precision,F003
+EV030,U001,text,Su cuenta será bloqueada. Pulse este enlace e introduzca su clave,ESTAFA,fraud_assessment,True,fraud_recall_precision,F004
+EV031,U001,text,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,ESTAFA,fraud_assessment,True,fraud_recall_precision,F005
+EV032,U001,text,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,ESTAFA,fraud_assessment,True,fraud_recall_precision,F006
+EV033,U001,text,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,ESTAFA,fraud_assessment,True,fraud_recall_precision,F007
+EV034,U001,text,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,ESTAFA,fraud_assessment,True,fraud_recall_precision,F008
+EV035,U001,text,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,ESTAFA,fraud_assessment,True,fraud_recall_precision,F009
+EV036,U001,text,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,ESTAFA,fraud_assessment,True,fraud_recall_precision,F010
+EV037,U001,document_text,D001,DOCUMENTO,document_summary,False,document_extraction,D001
+EV038,U001,document_text,D002,DOCUMENTO,document_summary,False,document_extraction,D002
+EV039,U001,document_text,D003,DOCUMENTO,document_summary,False,document_extraction,D003
+EV040,U001,document_text,D004,DOCUMENTO,document_summary,False,document_extraction,D004
+EV041,U001,document_text,D005,DOCUMENTO,document_summary,True,document_extraction,D005
+EV042,U001,batch,run_anomaly_detection,GESTION,anomaly_alert,True,anomaly_detection,A001
+EV043,U001,batch,run_anomaly_detection,GESTION,anomaly_alert,True,anomaly_detection,A002
+EV044,U001,batch,run_anomaly_detection,GESTION,anomaly_alert,True,anomaly_detection,A003
+EV045,U001,batch,run_anomaly_detection,GESTION,anomaly_alert,True,anomaly_detection,A004
+EV046,U001,batch,run_anomaly_detection,GESTION,anomaly_alert,True,anomaly_detection,A005
+EV047,U001,text,¿Me ha llegado la pensión?,,workflow_response,,latency_e2e,manual_timing
+EV048,U001,text,Me están pidiendo un Bizum urgente,,workflow_response,,latency_e2e,manual_timing
+EV049,U001,text,No entiendo esta carta del banco,,workflow_response,,latency_e2e,manual_timing

@@ -1,0 +1,71 @@
+fraud_case_id,user_id,channel,scenario_text,expected_risk_level,expected_alert,fraud_type,risk_signals
+F001,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F002,U001,sms,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",alto,True,suplantacion_familiar,"familiar,urgencia,dinero"
+F003,U001,email,Confirme su IBAN y tarjeta en este enlace para evitar el bloqueo,alto,True,phishing,"enlace,iban,tarjeta,bloqueo"
+F004,U001,sms,Su cuenta será bloqueada. Pulse este enlace e introduzca su clave,alto,True,phishing,"enlace,amenaza,clave"
+F005,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F006,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F007,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F008,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F009,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F010,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F011,U001,email,Confirme su IBAN y tarjeta en este enlace para evitar el bloqueo,alto,True,phishing,"enlace,iban,tarjeta,bloqueo"
+F012,U001,llamada,Me dicen que haga un Bizum urgente para desbloquear mi cuenta,alto,True,bizum,"urgencia,pago_inmediato,bloqueo_cuenta"
+F013,U001,llamada,Me dicen que haga un Bizum urgente para desbloquear mi cuenta,alto,True,bizum,"urgencia,pago_inmediato,bloqueo_cuenta"
+F014,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F015,U001,sms,Su cuenta será bloqueada. Pulse este enlace e introduzca su clave,alto,True,phishing,"enlace,amenaza,clave"
+F016,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F017,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F018,U001,sms,Su cuenta será bloqueada. Pulse este enlace e introduzca su clave,alto,True,phishing,"enlace,amenaza,clave"
+F019,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F020,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F021,U001,sms,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",alto,True,suplantacion_familiar,"familiar,urgencia,dinero"
+F022,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F023,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F024,U001,sms,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",alto,True,suplantacion_familiar,"familiar,urgencia,dinero"
+F025,U001,sms,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",alto,True,suplantacion_familiar,"familiar,urgencia,dinero"
+F026,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F027,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F028,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F029,U001,sms,"Mamá soy yo, he perdido el móvil, envíame dinero urgente a este número",alto,True,suplantacion_familiar,"familiar,urgencia,dinero"
+F030,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F031,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F032,U001,llamada,Un técnico dice que debe entrar en mi móvil para arreglar mi banca online,alto,True,soporte_falso,"acceso_remoto,soporte_falso"
+F033,U001,voz,Me piden transferir mi dinero a una cuenta segura porque hay un fraude,alto,True,vishing,"cuenta_segura,urgencia,transferencia"
+F034,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F035,U001,llamada,Dicen que son del banco y me piden el código que acaba de llegar por SMS,alto,True,vishing,"codigo_sms,suplantacion_banco"
+F036,U001,llamada,Una persona dice que es de mi oficina y quiere confirmar una cita,medio,False,,llamada_informativa
+F037,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F038,U001,voz,Mi hija me ha pedido que le haga una transferencia cuando pueda,medio,False,,transferencia_familiar
+F039,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F040,U001,llamada,Una persona dice que es de mi oficina y quiere confirmar una cita,medio,False,,llamada_informativa
+F041,U001,voz,Mi hija me ha pedido que le haga una transferencia cuando pueda,medio,False,,transferencia_familiar
+F042,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F043,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F044,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F045,U001,voz,Me piden que revise un cargo que no recuerdo,medio,False,,duda_cargo
+F046,U001,llamada,Una persona dice que es de mi oficina y quiere confirmar una cita,medio,False,,llamada_informativa
+F047,U001,llamada,Una persona dice que es de mi oficina y quiere confirmar una cita,medio,False,,llamada_informativa
+F048,U001,voz,Mi hija me ha pedido que le haga una transferencia cuando pueda,medio,False,,transferencia_familiar
+F049,U001,sms,Recibirá un aviso de seguridad del banco en los próximos días,medio,False,,aviso_generico
+F050,U001,llamada,Una persona dice que es de mi oficina y quiere confirmar una cita,medio,False,,llamada_informativa
+F051,U001,voz,¿Cuánto he gastado en farmacia este mes?,bajo,False,,consulta_normal
+F052,U001,voz,Apunta 10 euros de farmacia,bajo,False,,registro_efectivo
+F053,U001,voz,¿Cuánto he gastado en farmacia este mes?,bajo,False,,consulta_normal
+F054,U001,voz,Apunta 10 euros de farmacia,bajo,False,,registro_efectivo
+F055,U001,voz,Quiero saber si ha llegado la pensión,bajo,False,,consulta_normal
+F056,U001,email,Resumen mensual de movimientos disponible en su banco,bajo,False,,aviso_normal
+F057,U001,voz,¿Cuánto he gastado en farmacia este mes?,bajo,False,,consulta_normal
+F058,U001,voz,Apunta 10 euros de farmacia,bajo,False,,registro_efectivo
+F059,U001,voz,Quiero saber si ha llegado la pensión,bajo,False,,consulta_normal
+F060,U001,voz,Quiero saber si ha llegado la pensión,bajo,False,,consulta_normal
+F061,U001,email,Resumen mensual de movimientos disponible en su banco,bajo,False,,aviso_normal
+F062,U001,voz,Apunta 10 euros de farmacia,bajo,False,,registro_efectivo
+F063,U001,voz,¿Cuánto he gastado en farmacia este mes?,bajo,False,,consulta_normal
+F064,U001,sms,Su cita médica queda confirmada para mañana a las 10:00,bajo,False,,mensaje_normal
+F065,U001,voz,Quiero saber si ha llegado la pensión,bajo,False,,consulta_normal
+F066,U001,voz,Quiero saber si ha llegado la pensión,bajo,False,,consulta_normal
+F067,U001,email,Resumen mensual de movimientos disponible en su banco,bajo,False,,aviso_normal
+F068,U001,voz,Apunta 10 euros de farmacia,bajo,False,,registro_efectivo
+F069,U001,sms,Su cita médica queda confirmada para mañana a las 10:00,bajo,False,,mensaje_normal
+F070,U001,sms,Su cita médica queda confirmada para mañana a las 10:00,bajo,False,,mensaje_normal

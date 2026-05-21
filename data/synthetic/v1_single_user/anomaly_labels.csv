@@ -1,0 +1,9 @@
+anomaly_id,user_id,transaction_id,anomaly_type,expected_detection,explanation
+A001,U001,T0031,duplicado,True,Primer cargo de un posible duplicado.
+A002,U001,T0032,duplicado,True,Cargo duplicado en menos de 6 horas.
+A003,U001,T0038,comision_inusual,True,Comisión superior a la media histórica.
+A004,U001,T0044,duplicado,True,Primer cargo de un posible duplicado.
+A005,U001,T0046,duplicado,True,Cargo duplicado en menos de 6 horas.
+A006,U001,T0088,duplicado,True,Primer cargo de un posible duplicado.
+A007,U001,T0089,duplicado,True,Cargo duplicado en menos de 6 horas.
+A008,U001,T0094,comision_inusual,True,Comisión superior a la media histórica.

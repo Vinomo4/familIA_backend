@@ -1,0 +1,51 @@
+cash_log_id,user_id,date,source_phrase,amount,cash_flow_type,category,cash_balance_after
+C001,U001,2026-01-02,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,76.0
+C002,U001,2026-01-03,Guarda que he pagado 15 euros en cafetería,15,gasto_efectivo,ocio,65.0
+C003,U001,2026-01-06,Guarda que he pagado 12 euros en cafetería,12,gasto_efectivo,ocio,54.0
+C004,U001,2026-01-12,Apunta 15 euros de panadería,15,gasto_efectivo,supermercado,9.0
+C005,U001,2026-01-20,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,156.0
+C006,U001,2026-01-23,He sacado 60 euros del cajero,60,entrada_efectivo,retirada_efectivo,201.0
+C007,U001,2026-01-25,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,69.0
+C008,U001,2026-01-27,He gastado 50 euros en el mercado,50,gasto_efectivo,supermercado,23.0
+C009,U001,2026-02-05,Guarda que he pagado 3 euros en cafetería,3,gasto_efectivo,ocio,95.0
+C010,U001,2026-02-07,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,61.0
+C011,U001,2026-02-08,Apunta 50 euros de farmacia,50,gasto_efectivo,farmacia,11.0
+C012,U001,2026-02-12,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,191.0
+C013,U001,2026-02-13,Pon 10 euros del taxi,10,gasto_efectivo,transporte,1.0
+C014,U001,2026-02-14,Guarda que he pagado 15 euros en cafetería,15,gasto_efectivo,ocio,139.0
+C015,U001,2026-02-19,Pon 3 euros del taxi,3,gasto_efectivo,transporte,116.0
+C016,U001,2026-02-21,Pon 7 euros del taxi,7,gasto_efectivo,transporte,46.0
+C017,U001,2026-02-22,He gastado 50 euros en el mercado,50,gasto_efectivo,supermercado,24.0
+C018,U001,2026-02-26,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,66.0
+C019,U001,2026-03-01,Apunta 10 euros de farmacia,10,gasto_efectivo,farmacia,119.0
+C020,U001,2026-03-02,Apunta 12 euros de farmacia,12,gasto_efectivo,farmacia,53.0
+C021,U001,2026-03-06,Guarda que he pagado 5 euros en cafetería,5,gasto_efectivo,ocio,41.0
+C022,U001,2026-03-08,He gastado 7 euros en el mercado,7,gasto_efectivo,supermercado,16.0
+C023,U001,2026-03-10,He gastado 15 euros en el mercado,15,gasto_efectivo,supermercado,104.0
+C024,U001,2026-03-19,Apunta 7 euros de panadería,7,gasto_efectivo,supermercado,16.0
+C025,U001,2026-03-26,He sacado 40 euros del cajero,40,entrada_efectivo,retirada_efectivo,74.0
+C026,U001,2026-04-05,Apunta 10 euros de farmacia,10,gasto_efectivo,farmacia,6.0
+C027,U001,2026-04-15,He sacado 30 euros del cajero,30,entrada_efectivo,retirada_efectivo,122.0
+C028,U001,2026-04-19,He gastado 10 euros en el mercado,10,gasto_efectivo,supermercado,141.0
+C029,U001,2026-04-20,Apunta 5 euros de panadería,5,gasto_efectivo,supermercado,151.0
+C030,U001,2026-04-21,Apunta 8 euros de panadería,8,gasto_efectivo,supermercado,48.0
+C031,U001,2026-04-26,Guarda que he pagado 8 euros en cafetería,8,gasto_efectivo,ocio,46.0
+C032,U001,2026-04-28,Apunta 20 euros de farmacia,20,gasto_efectivo,farmacia,21.0
+C033,U001,2026-05-01,Apunta 5 euros de farmacia,5,gasto_efectivo,farmacia,26.0
+C034,U001,2026-05-10,He sacado 20 euros del cajero,20,entrada_efectivo,retirada_efectivo,119.0
+C035,U001,2026-05-11,Guarda que he pagado 5 euros en cafetería,5,gasto_efectivo,ocio,186.0
+C036,U001,2026-05-16,Guarda que he pagado 7 euros en cafetería,7,gasto_efectivo,ocio,115.0
+C037,U001,2026-05-20,Guarda que he pagado 12 euros en cafetería,12,gasto_efectivo,ocio,92.0
+C038,U001,2026-05-22,Guarda que he pagado 50 euros en cafetería,50,gasto_efectivo,ocio,151.0
+C039,U001,2026-05-24,He gastado 8 euros en el mercado,8,gasto_efectivo,supermercado,1.0
+C040,U001,2026-05-28,Apunta 20 euros de farmacia,20,gasto_efectivo,farmacia,56.0
+C041,U001,2026-06-03,Pon 30 euros del taxi,30,gasto_efectivo,transporte,85.0
+C042,U001,2026-06-05,Apunta 3 euros de panadería,3,gasto_efectivo,supermercado,23.0
+C043,U001,2026-06-10,Apunta 10 euros de panadería,10,gasto_efectivo,supermercado,176.0
+C044,U001,2026-06-10,Apunta 7 euros de panadería,7,gasto_efectivo,supermercado,154.0
+C045,U001,2026-06-14,Pon 15 euros del taxi,15,gasto_efectivo,transporte,161.0
+C046,U001,2026-06-15,Apunta 15 euros de panadería,15,gasto_efectivo,supermercado,31.0
+C047,U001,2026-06-17,He sacado 60 euros del cajero,60,entrada_efectivo,retirada_efectivo,129.0
+C048,U001,2026-06-21,Apunta 12 euros de panadería,12,gasto_efectivo,supermercado,73.0
+C049,U001,2026-06-23,He sacado 50 euros del cajero,50,entrada_efectivo,retirada_efectivo,98.0
+C050,U001,2026-06-24,He gastado 40 euros en el mercado,40,gasto_efectivo,supermercado,99.0

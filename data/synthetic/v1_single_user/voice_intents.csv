@@ -1,0 +1,52 @@
+case_id,user_id,input_text,expected_intent,difficulty
+I001,U001,¿Me ha llegado la pensión?,GESTION,fácil
+I002,U001,¿Cuánto dinero tengo en la cuenta?,GESTION,media
+I003,U001,¿Cuánto he gastado este mes en farmacia?,GESTION,fácil
+I004,U001,¿He pagado ya la luz?,GESTION,fácil
+I005,U001,¿Cuánto me queda de efectivo?,GESTION,media
+I006,U001,Apunta 10 euros de farmacia,GESTION,fácil
+I007,U001,He sacado 20 euros del cajero,GESTION,fácil
+I008,U001,¿Cuánto he gastado en supermercado esta semana?,GESTION,fácil
+I009,U001,¿Tengo alguna comisión este mes?,GESTION,media
+I010,U001,¿Cuál fue mi último movimiento?,GESTION,fácil
+I011,U001,¿Cuánto pagué de teléfono?,GESTION,media
+I012,U001,¿Me queda saldo suficiente para los recibos?,GESTION,media
+I013,U001,Pon 15 euros del taxi de ayer,GESTION,media
+I014,U001,¿Cuándo llegó la pensión de mayo?,GESTION,media
+I015,U001,¿He tenido algún cargo repetido?,GESTION,media
+I016,U001,No entiendo esta carta del banco,DOCUMENTO,fácil
+I017,U001,Quiero que me expliques esta carta de comisiones,DOCUMENTO,media
+I018,U001,Me ha llegado una notificación del banco por correo,DOCUMENTO,media
+I019,U001,¿Qué significa este cambio de condiciones?,DOCUMENTO,media
+I020,U001,"Lee este papel del banco, por favor",DOCUMENTO,fácil
+I021,U001,"Me dicen que me cobrarán mantenimiento, ¿qué quiere decir?",DOCUMENTO,media
+I022,U001,Tengo una carta sobre mi tarjeta,DOCUMENTO,media
+I023,U001,Explícame este aviso de seguridad,DOCUMENTO,fácil
+I024,U001,¿Esta carta dice que debo pagar algo?,DOCUMENTO,media
+I025,U001,Ayúdame con este documento bancario,DOCUMENTO,media
+I026,U001,No sé dónde tengo que pulsar en la app,INTERFAZ,fácil
+I027,U001,La pantalla del banco no me deja avanzar,INTERFAZ,media
+I028,U001,¿Dónde está el botón de mis cuentas?,INTERFAZ,fácil
+I029,U001,No encuentro el saldo en la aplicación,INTERFAZ,media
+I030,U001,Me sale un error en la app del banco,INTERFAZ,media
+I031,U001,No sé cómo volver atrás en esta pantalla,INTERFAZ,media
+I032,U001,¿Qué botón debo tocar ahora?,INTERFAZ,fácil
+I033,U001,La letra es pequeña y no entiendo la pantalla,INTERFAZ,fácil
+I034,U001,Se me ha quedado la app bloqueada,INTERFAZ,fácil
+I035,U001,Ayúdame a navegar por la app del banco,INTERFAZ,fácil
+I036,U001,Me están pidiendo un Bizum urgente,ESTAFA,media
+I037,U001,Me llaman del banco y me piden un código por SMS,ESTAFA,fácil
+I038,U001,Dicen que si no pago ahora me bloquean la cuenta,ESTAFA,fácil
+I039,U001,Me ha llegado un enlace para actualizar mis claves,ESTAFA,fácil
+I040,U001,Un técnico dice que necesita entrar en mi móvil,ESTAFA,media
+I041,U001,Me piden la contraseña para evitar un cargo,ESTAFA,media
+I042,U001,Dicen que mi tarjeta está bloqueada y debo confirmar datos,ESTAFA,media
+I043,U001,Me escriben diciendo que mi hijo necesita dinero urgente,ESTAFA,media
+I044,U001,Me piden transferir dinero a una cuenta segura,ESTAFA,media
+I045,U001,Me dicen que no cuelgue y que haga el pago ya,ESTAFA,fácil
+I046,U001,Tengo una carta rara que dice que pulse un enlace,ESTAFA,difícil
+I047,U001,Me sale un aviso del banco y no sé si es verdad,DOCUMENTO,difícil
+I048,U001,Quiero apuntar que he dado 20 euros a mi nieto,GESTION,media
+I049,U001,La aplicación me pide un código y no sé si debo ponerlo,INTERFAZ,difícil
+I050,U001,Alguien me dice que confirme mis claves en la app,ESTAFA,difícil
+I051,U001,No entiendo este mensaje de una comisión nueva,DOCUMENTO,media

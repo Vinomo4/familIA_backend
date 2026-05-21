@@ -1,0 +1,16 @@
+document_id,user_id,document_type,document_text,expected_extracted_amount,expected_summary,expected_action_type
+D001,U001,comision,Le informamos de que a partir del próximo mes se aplicará una comisión de mantenimiento de 15 euros mensuales si no mantiene domiciliado un recibo.,15,El banco cobrará 15 euros al mes si no hay un recibo domiciliado.,revisar
+D002,U001,aviso_seguridad,"Nunca compartiremos por teléfono claves, PIN ni códigos de verificación enviados por SMS.",,El banco recuerda que no debe compartir claves ni códigos por teléfono.,informativo
+D003,U001,cambio_condiciones,"A partir del día 1 de abril, la comisión por retirada de efectivo en cajeros externos será de 2 euros por operación.",2,Retirar dinero en cajeros externos costará 2 euros por operación desde abril.,informativo
+D004,U001,tarjeta,"La cuota anual de la tarjeta será de 24 euros, cargada en su cuenta el próximo mes.",24,El banco cargará 24 euros por la cuota anual de la tarjeta.,revisar
+D005,U001,recibo_devuelto,"Se ha producido la devolución de un recibo por importe de 38,40 euros por saldo insuficiente.",38.4,"Un recibo de 38,40 euros ha sido devuelto por saldo insuficiente.",alerta
+D006,U001,comision,Se aplicará una comisión extraordinaria de 30 euros por descubierto en cuenta.,30,El banco informa de una comisión de 30 euros por descubierto.,alerta
+D007,U001,aviso_seguridad,"Si recibe llamadas solicitando transferencias urgentes, cuelgue y contacte con su oficina.",,El banco recomienda colgar si le piden transferencias urgentes por teléfono.,informativo
+D008,U001,cambio_condiciones,"El servicio de correspondencia en papel tendrá un coste de 1,50 euros por envío.",1.5,"La correspondencia en papel costará 1,50 euros por envío.",informativo
+D009,U001,phishing,Actualice sus claves en el enlace adjunto para evitar la suspensión de la cuenta.,,Este mensaje parece sospechoso porque pide actualizar claves mediante un enlace.,alerta
+D010,U001,comision,La cuenta mantendrá una comisión reducida de 6 euros mensuales por mantenimiento.,6,La comisión mensual de mantenimiento será de 6 euros.,informativo
+D011,U001,tarjeta,"Hemos detectado una operación con tarjeta por importe de 12,60 euros en Taxi Ciudad.",12.6,"El banco avisa de una operación de 12,60 euros en Taxi Ciudad.",revisar
+D012,U001,cambio_condiciones,La bonificación de comisiones se mantiene si recibe ingresos recurrentes superiores a 600 euros.,600,Para mantener bonificación debe recibir ingresos recurrentes superiores a 600 euros.,informativo
+D013,U001,aviso_seguridad,Su banco nunca le solicitará la clave completa ni el PIN de su tarjeta.,,El banco recuerda que nunca pedirá clave completa ni PIN.,informativo
+D014,U001,recibo_devuelto,"No se ha podido cargar el recibo de telefonía por importe de 24,90 euros.",24.9,"No se ha podido cargar un recibo de teléfono de 24,90 euros.",revisar
+D015,U001,comision,Se ha aplicado un cargo de 15 euros por emisión de duplicado de tarjeta.,15,Se ha aplicado un cargo de 15 euros por duplicado de tarjeta.,revisar

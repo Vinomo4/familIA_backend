@@ -1,0 +1,51 @@
+case_id,user_id,input_text,expected_amount,expected_category,expected_transaction_type,difficulty
+E001,U001,He sacado 60 euros del cajero,60,retirada_efectivo,entrada_efectivo,media
+E002,U001,Anota 50 euros para medicinas,50,farmacia,gasto_efectivo,fácil
+E003,U001,Anota 18 euros para medicinas,18,farmacia,gasto_efectivo,fácil
+E004,U001,Registra 10 euros de cafetería,10,ocio,gasto_efectivo,media
+E005,U001,Anota 20 euros para medicinas,20,farmacia,gasto_efectivo,fácil
+E006,U001,He retirado 8 euros en efectivo,8,retirada_efectivo,entrada_efectivo,media
+E007,U001,Anota 18 euros para medicinas,18,farmacia,gasto_efectivo,fácil
+E008,U001,Anota 12 euros para medicinas,12,farmacia,gasto_efectivo,media
+E009,U001,Pon 60 euros del taxi,60,transporte,gasto_efectivo,media
+E010,U001,Pon 25 euros del taxi,25,transporte,gasto_efectivo,fácil
+E011,U001,Anota 25 euros para medicinas,25,farmacia,gasto_efectivo,fácil
+E012,U001,He gastado 30 euros en el mercado,30,supermercado,gasto_efectivo,media
+E013,U001,Pon 60 euros del taxi,60,transporte,gasto_efectivo,media
+E014,U001,Pon 3 euros del taxi,3,transporte,gasto_efectivo,media
+E015,U001,Anota 12 euros para medicinas,12,farmacia,gasto_efectivo,fácil
+E016,U001,He retirado 12 euros en efectivo,12,retirada_efectivo,entrada_efectivo,media
+E017,U001,Anota 10 euros para medicinas,10,farmacia,gasto_efectivo,media
+E018,U001,Guarda 60 euros de panadería,60,supermercado,gasto_efectivo,fácil
+E019,U001,He retirado 3 euros en efectivo,3,retirada_efectivo,entrada_efectivo,fácil
+E020,U001,Registra 8 euros de cafetería,8,ocio,gasto_efectivo,fácil
+E021,U001,Apunta 50 euros de farmacia,50,farmacia,gasto_efectivo,fácil
+E022,U001,He sacado 8 euros del cajero,8,retirada_efectivo,entrada_efectivo,fácil
+E023,U001,Pon 8 euros del taxi,8,transporte,gasto_efectivo,fácil
+E024,U001,He retirado 30 euros en efectivo,30,retirada_efectivo,entrada_efectivo,fácil
+E025,U001,He sacado 18 euros del cajero,18,retirada_efectivo,entrada_efectivo,media
+E026,U001,Registra 7 euros de cafetería,7,ocio,gasto_efectivo,fácil
+E027,U001,Pon 10 euros del taxi,10,transporte,gasto_efectivo,fácil
+E028,U001,Apunta 10 euros de farmacia,10,farmacia,gasto_efectivo,media
+E029,U001,Anota 40 euros para medicinas,40,farmacia,gasto_efectivo,fácil
+E030,U001,He gastado 25 euros en el mercado,25,supermercado,gasto_efectivo,fácil
+E031,U001,He gastado 40 euros en el mercado,40,supermercado,gasto_efectivo,media
+E032,U001,He gastado 50 euros en el mercado,50,supermercado,gasto_efectivo,fácil
+E033,U001,Registra 20 euros de cafetería,20,ocio,gasto_efectivo,media
+E034,U001,Registra 5 euros de cafetería,5,ocio,gasto_efectivo,media
+E035,U001,Apunta 60 euros de farmacia,60,farmacia,gasto_efectivo,media
+E036,U001,He retirado 5 euros en efectivo,5,retirada_efectivo,entrada_efectivo,media
+E037,U001,Registra 30 euros de cafetería,30,ocio,gasto_efectivo,media
+E038,U001,Pon 15 euros del taxi,15,transporte,gasto_efectivo,fácil
+E039,U001,Guarda 25 euros de panadería,25,supermercado,gasto_efectivo,media
+E040,U001,He retirado 15 euros en efectivo,15,retirada_efectivo,entrada_efectivo,media
+E041,U001,Registra 60 euros de cafetería,60,ocio,gasto_efectivo,fácil
+E042,U001,He gastado 10 euros en el mercado,10,supermercado,gasto_efectivo,media
+E043,U001,He sacado 50 euros del cajero,50,retirada_efectivo,entrada_efectivo,media
+E044,U001,Anota 12 euros para medicinas,12,farmacia,gasto_efectivo,fácil
+E045,U001,He retirado 60 euros en efectivo,60,retirada_efectivo,entrada_efectivo,media
+E046,U001,Pon 18 euros del taxi,18,transporte,gasto_efectivo,fácil
+E047,U001,Registra 50 euros de cafetería,50,ocio,gasto_efectivo,media
+E048,U001,Registra 10 euros de cafetería,10,ocio,gasto_efectivo,media
+E049,U001,Apunta 20 euros de farmacia,20,farmacia,gasto_efectivo,fácil
+E050,U001,He gastado 8 euros en el mercado,8,supermercado,gasto_efectivo,media

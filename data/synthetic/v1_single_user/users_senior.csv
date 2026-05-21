@@ -1,0 +1,2 @@
+user_id,name_alias,age,digital_level,household_type,monthly_pension,cash_start_balance,bank_start_balance,alert_threshold,relative_id,relative_alias,consent_dashboard,notes
+U001,Carmen,78,bajo,vive_sola,980.0,80.0,1450.0,300.0,R001,Marta,True,Perfil ficticio monousuario para validar el MVP de FamilIA.
