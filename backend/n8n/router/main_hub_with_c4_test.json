@@ -1,0 +1,479 @@
+{
+  "name": "FamilIA - Main Hub",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c92e60c4-c6e8-4e46-9685-15a72025d50a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -368,
+        128
+      ],
+      "id": "29255a51-c3c0-4c08-966e-6a3138173a03",
+      "name": "Webhook",
+      "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/audio/transcriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpMultipleHeadersAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "whisper-large-v3-turbo"
+            },
+            {
+              "name": "language",
+              "value": "es"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "=file",
+              "inputDataFieldName": "audio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d5e799ad-832a-40d2-9d6f-ed08ca8ad023",
+      "name": "HTTP Request (STT)"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Classify the following user transcript: {{ $json.text }}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "You are the central intent router for FamilIA. Your sole responsibility is to analyze the provided user text and determine the financial or operational category requested by the elderly user.\n\nStrictly classify the intent into one of the following four domains under the \"category\" key:\n- DOCUMENT: Inquiries about physical bank letters, contractual changes, or printed fee notices.\n- INTERFACE: Navigation issues inside the banking app, confusion about which button to press, or UI queries.\n- SCAM: Reports of suspicious calls, alarming SMS, coercion, sense of urgency, or emergency protocol activation.\n- MANAGEMENT: Balance checks, pension status, monthly expense reviews, or cash wallet annotations."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "31485b6d-beb0-4b6b-bad2-ea5984b3d70c",
+      "name": "Router AI Agent"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"DOCUMENT\", \"INTERFACE\", \"SCAM\", \"MANAGEMENT\"]\n\t\t}\n\t},\n\t\"required\": [\"category\"]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        224
+      ],
+      "id": "29f447bb-cfb1-4693-824c-ea7400f3ee0c",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "DOCUMENT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "document"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "INTERFACE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "interface"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "MANAGEMENT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "management"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "SCAM",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "scam"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        0
+      ],
+      "id": "62261f06-c12b-4e5d-8906-2330921562b9",
+      "name": "Switch Intents"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "text",
+              "value": "={{ $('HTTP Request (STT)').item.json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        224
+      ],
+      "id": "a9a45ad0-ac73-4c58-8066-43ea5d219477",
+      "name": "Prepare Scam Payload (Voice)"
+    },
+    {
+      "parameters": {
+        "workflowId": "qY3XsgMkJYvOh0yo",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        912,
+        224
+      ],
+      "id": "244c3bb4-d6f0-4f83-b9d0-b101d67ee1a5",
+      "name": "Call 'Scam' (Voice)",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "workflowId": "oeDjuaP0lQKdJgdn",
+        "options": {}
+      },
+      "id": "654bd65e-bf65-4554-abe2-299f40de075b",
+      "name": "Call 'C1_Document' (Image)",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        0,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $binary && $binary.audio ? true : false }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "b450d1b0-cd12-4e89-90da-3ec0dfaeda92",
+      "name": "Audio file?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        144,
+        224
+      ],
+      "id": "ac217d2f-fc7f-425b-bd5e-0061d0bb9fc3",
+      "name": "Gemini 3.1 Flash Lite"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        224
+      ],
+      "id": "1a767678-a63f-4acc-ab6e-5363251ff656",
+      "name": "Gemini 2.5 Flash Lite"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "eCsQnkaS70Scimg0",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/eCsQnkaS70Scimg0",
+          "cachedResultName": "FamilIA - C4 Gestión Financiera"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "U001",
+            "message": "¿Me ha llegado la pensión?"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        688,
+        96
+      ],
+      "id": "c858c1f9-885a-4e0a-9526-d17f37393839",
+      "name": "Call 'C4 Management'"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Audio file?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (STT)": {
+      "main": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch Intents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Intents": {
+      "main": [
+        [],
+        [],
+        [
+          {
+            "node": "Call 'C4 Management'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Scam Payload (Voice)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Scam Payload (Voice)": {
+      "main": [
+        [
+          {
+            "node": "Call 'Scam' (Voice)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio file?": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (STT)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'C1_Document' (Image)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 3.1 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "2342cc3c-2300-4d27-88ec-9434e1bfc573",
+  "meta": {
+    "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
+  },
+  "id": "kYRyE7XxKz6iWmas",
+  "tags": []
+}
