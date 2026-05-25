@@ -278,7 +278,13 @@
         224
       ],
       "id": "ac217d2f-fc7f-425b-bd5e-0061d0bb9fc3",
-      "name": "Gemini 3.1 Flash Lite"
+      "name": "Gemini 3.1 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -292,7 +298,13 @@
         224
       ],
       "id": "1a767678-a63f-4acc-ab6e-5363251ff656",
-      "name": "Gemini 2.5 Flash Lite"
+      "name": "Gemini 2.5 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -307,7 +319,7 @@
           "mappingMode": "defineBelow",
           "value": {
             "user_id": "U001",
-            "message": "¿Me ha llegado la pensión?"
+            "text": "¿Me ha llegado la pensión?"
           },
           "matchingColumns": [],
           "schema": [
@@ -324,6 +336,16 @@
             {
               "id": "message",
               "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "text",
+              "displayName": "text",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -470,8 +492,9 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "2342cc3c-2300-4d27-88ec-9434e1bfc573",
+  "versionId": "11d96fed-a219-474a-bbee-2d78d9e9ed44",
   "meta": {
+    "templateCredsSetupCompleted": true,
     "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
   },
   "id": "kYRyE7XxKz6iWmas",
