@@ -306,8 +306,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        1776
+        704,
+        1856
       ],
       "id": "9f5ccaa0-ba9f-4d0b-a947-80f4b76443e2",
       "name": "Prepare Management Payload"
@@ -319,8 +319,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        1904
+        704,
+        2032
       ],
       "id": "a1d21e31-80e2-4438-a2a8-9add74aaa6ac",
       "name": "Prepare Scam Payload (Voice and Text)"
