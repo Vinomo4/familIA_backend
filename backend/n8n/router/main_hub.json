@@ -9,10 +9,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -304,
-        96
+        96,
+        304
       ],
-      "id": "44eeccf1-61a6-452b-8d76-38f737bff95e",
+      "id": "1be3fcd3-bd3a-4b1e-9157-d4b6ec7f6ad5",
       "name": "Webhook",
       "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
     },
@@ -46,10 +46,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        64,
-        -32
+        464,
+        176
       ],
-      "id": "a5088b1f-a2db-4115-a8cc-1062f4988f86",
+      "id": "aeca6679-42df-4d95-85f0-58dec47f8095",
       "name": "HTTP Request (STT)",
       "credentials": {
         "httpMultipleHeadersAuth": {
@@ -71,10 +71,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        288,
-        -32
+        896,
+        176
       ],
-      "id": "cfaec158-859d-43c3-992d-5c5e4f2321ca",
+      "id": "3213ae73-e4a8-48ba-a94c-2f2e3b83570c",
       "name": "Router AI Agent"
     },
     {
@@ -85,10 +85,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        416,
-        192
+        816,
+        400
       ],
-      "id": "e5729bc6-2b49-486f-9deb-4dbb6b4ea108",
+      "id": "da646b86-8682-499e-af0c-8e94f04a2f51",
       "name": "Structured Output Parser"
     },
     {
@@ -194,61 +194,24 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        544,
-        -32
+        1152,
+        176
       ],
-      "id": "675adb41-7162-4196-ab6d-0fc471c9d04a",
+      "id": "d95b79ba-a029-4e58-b549-bebf35ab07f4",
       "name": "Switch Intents"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "name": "text",
-              "value": "={{ $('HTTP Request (STT)').item.json.text }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        768,
-        192
-      ],
-      "id": "2470bd49-9c93-483d-a980-93c7aaa32f76",
-      "name": "Prepare Scam Payload (Voice)"
-    },
-    {
-      "parameters": {
-        "workflowId": "qY3XsgMkJYvOh0yo",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1,
-      "position": [
-        976,
-        192
-      ],
-      "id": "76594ead-e22c-44c3-aecf-f0c605b317a2",
-      "name": "Call 'Scam' (Voice)",
-      "alwaysOutputData": false
     },
     {
       "parameters": {
         "workflowId": "oeDjuaP0lQKdJgdn",
         "options": {}
       },
-      "id": "eca30902-3d65-4a92-9b0c-8a922007a61c",
+      "id": "5f859180-6b19-4d0b-a8ed-6e1be3d9fac6",
       "name": "Call 'C1_Document' (Image)",
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1,
       "position": [
-        64,
-        320
+        464,
+        528
       ]
     },
     {
@@ -262,13 +225,13 @@
           ]
         }
       },
-      "id": "e9b132f5-415d-4027-af71-6aa1092682bb",
+      "id": "177e4cea-42d2-4e5d-a84a-e0c5cf504d4c",
       "name": "Audio file?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -144,
-        96
+        256,
+        304
       ]
     },
     {
@@ -279,11 +242,480 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        208,
-        192
+        608,
+        400
       ],
-      "id": "caba7541-1c07-495a-ad1a-c31ef98aee19",
+      "id": "e9156376-6bc5-43a7-9b4e-c471e1665c43",
       "name": "Gemini 3.1 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        400
+      ],
+      "id": "37ef66bd-2a78-4b68-abcc-0252cfea331c",
+      "name": "Gemini 2.5 Flash Lite",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "30bb34fe-3445-49f9-a963-be82fa01dc17",
+              "leftValue": "={{ $json.body && $json.body.text ? $json.body.text : \"\" }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        464,
+        304
+      ],
+      "id": "4406a45e-3a15-4475-8974-d1d3ac96316e",
+      "name": "Text input?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "020bf701-2f8f-45f1-906e-6242b8e89893",
+              "name": "user_id",
+              "value": "={{ $json.body.user_id || \"U001\" }}",
+              "type": "string"
+            },
+            {
+              "id": "4831c3e8-3b0e-49d6-a750-e345a58228c5",
+              "name": "text",
+              "value": "={{ $json.body.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        912,
+        544
+      ],
+      "id": "4e1904df-238e-4c8d-8071-17b9a89723e3",
+      "name": "Normalize text"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "text",
+              "value": "={{ $if($('Normalize text').isExecuted, $('Normalize text').item.json.text, $if($('Normalize voice input').isExecuted, $('Normalize voice input').item.json.text, $json.text || $json.body?.text || \"\")) }}",
+              "type": "string",
+              "id": "930f56d6-b0f8-4e3f-a6be-3fe3799a3586"
+            },
+            {
+              "id": "7497f1bc-54f7-4ee1-9fe5-b5ad33ddc716",
+              "name": "user_id",
+              "value": "={{ $if($('Normalize text').isExecuted, $('Normalize text').item.json.user_id, $if($('Normalize voice input').isExecuted, $('Normalize voice input').item.json.user_id, $json.user_id || \"U001\")) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1376,
+        400
+      ],
+      "id": "458b33af-ae12-4e34-9b19-e13d56f01660",
+      "name": "Prepare Scam Payload (Voice and Text)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "146f72ab-5157-421f-8e4c-0a1a770cdd72",
+              "name": "user_id",
+              "value": "={{ $json.user_id || $json.body?.user_id || \"U001\" }}",
+              "type": "string"
+            },
+            {
+              "id": "6f61ecae-cfcf-40e9-bebd-4a6837701973",
+              "name": "text",
+              "value": "={{ $json.text || $json.transcription || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8ab7af02-9b13-41ad-acba-86c3c8aedbe0",
+              "name": "input_type",
+              "value": "voice",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        176
+      ],
+      "id": "fa1934e5-c331-45ea-af9d-d077447672a0",
+      "name": "Normalize voice input"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "qY3XsgMkJYvOh0yo",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/qY3XsgMkJYvOh0yo",
+          "cachedResultName": "Scam"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1584,
+        400
+      ],
+      "id": "65072406-6577-437a-b12a-03e5306be0d7",
+      "name": "Call 'Scam'"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "text",
+              "value": "={{ $('HTTP Request (STT)1').item.json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2304,
+        1776
+      ],
+      "id": "6f5b583d-429f-4e03-9d9a-d486ed97f533",
+      "name": "Prepare Scam Payload (Voice)"
+    },
+    {
+      "parameters": {
+        "workflowId": "qY3XsgMkJYvOh0yo",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        2512,
+        1776
+      ],
+      "id": "1e7ea45b-d534-4933-982c-8255297105d4",
+      "name": "Call 'Scam' (Voice)",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c92e60c4-c6e8-4e46-9685-15a72025d50a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1232,
+        1680
+      ],
+      "id": "6ae81fd3-eb1e-42de-b04a-7f3eb73e3e0e",
+      "name": "Webhook1",
+      "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/audio/transcriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpMultipleHeadersAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "whisper-large-v3-turbo"
+            },
+            {
+              "name": "language",
+              "value": "es"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "=file",
+              "inputDataFieldName": "audio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1600,
+        1552
+      ],
+      "id": "9d3666b9-0336-41ea-b5ae-eaafecda9548",
+      "name": "HTTP Request (STT)1",
+      "credentials": {
+        "httpMultipleHeadersAuth": {
+          "id": "wLNGcUvykTo5GOnn",
+          "name": "Multiple Headers Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Classify the following user transcript: {{ $json.text }}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "You are the central intent router for FamilIA. Your sole responsibility is to analyze the provided user text and determine the financial or operational category requested by the elderly user.\n\nStrictly classify the intent into one of the following four domains under the \"category\" key:\n- DOCUMENT: Inquiries about physical bank letters, contractual changes, or printed fee notices.\n- INTERFACE: Navigation issues inside the banking app, confusion about which button to press, or UI queries.\n- SCAM: Reports of suspicious calls, alarming SMS, coercion, sense of urgency, or emergency protocol activation.\n- MANAGEMENT: Balance checks, pension status, monthly expense reviews, or cash wallet annotations."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1824,
+        1552
+      ],
+      "id": "3815f17a-8e6c-4834-a1bb-97242815672d",
+      "name": "Router AI Agent1"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"DOCUMENT\", \"INTERFACE\", \"SCAM\", \"MANAGEMENT\"]\n\t\t}\n\t},\n\t\"required\": [\"category\"]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1952,
+        1776
+      ],
+      "id": "60db334f-55b7-46f6-b593-566650fdd8e2",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "DOCUMENT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "document"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "INTERFACE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "interface"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "MANAGEMENT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "management"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "rightValue": "SCAM",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "scam"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        2080,
+        1552
+      ],
+      "id": "68637570-9929-4b3a-b214-08a91f45e25d",
+      "name": "Switch Intents1"
+    },
+    {
+      "parameters": {
+        "workflowId": "oeDjuaP0lQKdJgdn",
+        "options": {}
+      },
+      "id": "5e6a461d-19d3-45d1-bc94-3820495087f1",
+      "name": "Call 'C1_Document' (Image)1",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        1904
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $binary && $binary.audio ? true : false }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "35cb9291-fd26-404c-8f7a-397809de7c93",
+      "name": "Audio file?1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1744,
+        1776
+      ],
+      "id": "aae7ccdb-d8f8-4be7-8ad9-f1aeced50fe3",
+      "name": "Gemini 3.1 Flash Lite1",
       "credentials": {
         "googlePalmApi": {
           "id": "QzxmHwaWUUgkEiKe",
@@ -299,17 +731,79 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        320,
-        192
+        1856,
+        1776
       ],
-      "id": "88dcf558-88fd-4485-90b8-a0c31ae5a065",
-      "name": "Gemini 2.5 Flash Lite",
+      "id": "9b9595f8-774d-4722-9a5c-9595775ac126",
+      "name": "Gemini 2.5 Flash Lite1",
       "credentials": {
         "googlePalmApi": {
           "id": "QzxmHwaWUUgkEiKe",
           "name": "Google Gemini(PaLM) Api account"
         }
       }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "OWJWiKmASySFf41z",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/OWJWiKmASySFf41z",
+          "cachedResultName": "Management"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "U001",
+            "text": "¿Me ha llegado la pensión?"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "text",
+              "displayName": "text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1360,
+        272
+      ],
+      "id": "3f60127a-8860-441d-ba2e-4ffac2c30afb",
+      "name": "Call 'Management'"
     }
   ],
   "connections": {
@@ -328,7 +822,7 @@
       "main": [
         [
           {
-            "node": "Router AI Agent",
+            "node": "Normalize voice input",
             "type": "main",
             "index": 0
           }
@@ -361,21 +855,16 @@
       "main": [
         [],
         [],
-        [],
         [
           {
-            "node": "Prepare Scam Payload (Voice)",
+            "node": "Call 'Management'",
             "type": "main",
             "index": 0
           }
-        ]
-      ]
-    },
-    "Prepare Scam Payload (Voice)": {
-      "main": [
+        ],
         [
           {
-            "node": "Call 'Scam' (Voice)",
+            "node": "Prepare Scam Payload (Voice and Text)",
             "type": "main",
             "index": 0
           }
@@ -393,7 +882,7 @@
         ],
         [
           {
-            "node": "Call 'C1_Document' (Image)",
+            "node": "Text input?",
             "type": "main",
             "index": 0
           }
@@ -416,6 +905,166 @@
         [
           {
             "node": "Router AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Text input?": {
+      "main": [
+        [
+          {
+            "node": "Normalize text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'C1_Document' (Image)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize text": {
+      "main": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Scam Payload (Voice and Text)": {
+      "main": [
+        [
+          {
+            "node": "Call 'Scam'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize voice input": {
+      "main": [
+        [
+          {
+            "node": "Router AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Scam Payload (Voice)": {
+      "main": [
+        [
+          {
+            "node": "Call 'Scam' (Voice)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Audio file?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (STT)1": {
+      "main": [
+        [
+          {
+            "node": "Router AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Switch Intents1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Router AI Agent1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Intents1": {
+      "main": [
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Prepare Scam Payload (Voice)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio file?1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (STT)1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'C1_Document' (Image)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 3.1 Flash Lite1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash Lite1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Router AI Agent1",
             "type": "ai_languageModel",
             "index": 1
           }
