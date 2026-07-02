@@ -1,14 +1,15 @@
 {
+  "name": "FamilIA - C1 Document Analysis",
   "nodes": [
     {
       "parameters": {},
-      "id": "5986fe65-d8ae-4f3a-959c-0a9f795b8f53",
+      "id": "20722fea-371c-4342-b21a-6d3cd06fe72d",
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1,
       "position": [
-        -1984,
-        736
+        -736,
+        112
       ]
     },
     {
@@ -19,15 +20,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -1856,
-        944
+        -608,
+        320
       ],
-      "id": "cea31b5b-635c-4e29-a2e2-fd99478e6456",
+      "id": "a2bff866-92a4-4ac6-99a4-e06c845d68e7",
       "name": "Gemini 3.1 Flash Lite",
       "credentials": {
         "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
         }
       }
     },
@@ -43,13 +44,13 @@
           ]
         }
       },
-      "id": "be884a26-2af3-4fd2-be15-184a103d8b9a",
+      "id": "9191d496-9954-483e-8749-66571e58539e",
       "name": "Is Scam?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1472,
-        736
+        -224,
+        112
       ]
     },
     {
@@ -100,13 +101,13 @@
         },
         "options": {}
       },
-      "id": "66991b5e-ee3c-4d2a-9116-e2bc62a2fc61",
+      "id": "875699bb-0d5f-48d8-85f6-589a1367ca65",
       "name": "Scam Mapping",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1248,
-        624
+        0,
+        0
       ]
     },
     {
@@ -122,10 +123,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -1776,
-        736
+        -528,
+        112
       ],
-      "id": "9ce26656-9bdf-4a03-93a0-bae92e3f7bba",
+      "id": "d43893d4-c588-4af3-9736-9b943e29cb89",
       "name": "AI Agent"
     },
     {
@@ -136,15 +137,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -1728,
-        944
+        -480,
+        320
       ],
-      "id": "d47d57ed-9c52-409f-bf6f-8f6aebf9a2d7",
+      "id": "a22cdf11-0744-40ad-af1b-8e2114b5ed5a",
       "name": "Gemini 2.5 Flash Lite",
       "credentials": {
         "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
         }
       }
     },
@@ -174,13 +175,13 @@
         },
         "options": {}
       },
-      "id": "d0773e19-e0c1-4b63-aa4d-8ef2ae62edff",
+      "id": "72dced30-1829-49e3-8664-981c2b799b2b",
       "name": "Healthy Document Response",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1248,
-        832
+        0,
+        208
       ]
     },
     {
@@ -191,13 +192,14 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        -1584,
-        976
+        -336,
+        352
       ],
-      "id": "6096b8c9-e848-4fd3-a2ce-606e7efc293b",
+      "id": "8c7f45be-4c02-403c-a91c-3cfea6783db2",
       "name": "Structured Output"
     }
   ],
+  "pinData": {},
   "connections": {
     "Execute Workflow Trigger": {
       "main": [
@@ -273,9 +275,16 @@
       ]
     }
   },
-  "pinData": {},
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3d296861-6299-4bd8-af1b-f6429abff910",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
-  }
+  },
+  "id": "8TY5eVGiuKfdAGHv",
+  "tags": []
 }
