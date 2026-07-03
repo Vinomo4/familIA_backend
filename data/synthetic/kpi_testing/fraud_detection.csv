@@ -1,0 +1,201 @@
+text,is_fraud,fraud_type
+Me piden transferir mi dinero a una cuenta segura porque mi cuenta está bajo ataque.,True,vishing
+"Hola mamá, he perdido el móvil. Por favor envíame dinero urgente por Bizum a este número.",True,suplantacion_familiar
+"Hola papá, mi móvil se ha roto y no puedo llamar. Necesito pagar una factura urgente, hazme un Bizum.",True,suplantacion_familiar
+Su cuenta bancaria ha sido bloqueada temporalmente por seguridad. Pulse en este enlace para reactivarla inmediatamente: https://bancoseguro.com,True,phishing
+"Para evitar cargos mensuales adicionales, confirme sus claves de seguridad y DNI en el siguiente enlace urgente.",True,phishing
+"Le llamo del departamento de seguridad del banco. Para cancelar una compra no autorizada, necesito que me diga el código SMS que acaba de recibir.",True,vishing
+Un técnico de soporte de su banco me dice que debe conectarse a mi móvil con AnyDesk para solucionar un problema en mi banca.,True,soporte_falso
+Me llama un supuesto informático del banco diciendo que hay un virus en mi cuenta y que tengo que facilitarle mi PIN.,True,soporte_falso
+Urgente: Se ha detectado una transferencia sospechosa de 800 euros en su cuenta. Cancele el envío pulsando aquí: https://seguridad-alertas.com,True,phishing
+"Estimado cliente, su tarjeta ha sido desactivada temporalmente. Valide su identidad en 2 horas para evitar cargos de bloqueo: https://santander-acceso.com",True,phishing
+Me dicen que haga un Bizum urgente de 100 euros para desbloquear mi cuenta corriente que ha sido suspendida.,True,vishing
+Me llaman del banco diciendo que hay un cobro duplicado de 300 euros y que necesitan mi clave de firma para anularlo.,True,vishing
+Un mensaje de Correos dice que mi paquete no se puede entregar por falta de pago de tasas y me da un link para poner mi tarjeta.,True,phishing
+"Hola abuela, soy tu nieto, he tenido un accidente con el coche y necesito que me envíes 600 euros urgentemente, no le digas nada a nadie.",True,suplantacion_familiar
+Me escribe mi supuesto sobrino diciendo que está retenido por la aduana y necesita que le haga un Bizum de inmediato.,True,suplantacion_familiar
+Un SMS de Hacienda me dice que tengo un reembolso de 120 euros pendiente y que pinche en el enlace para rellenar los datos de mi tarjeta.,True,phishing
+Me llaman diciendo que son de la distribuidora de luz y que si no pago una factura pendiente de 150 euros ahora mismo cortan la luz.,True,vishing
+Un correo electrónico del BBVA me advierte que mi cuenta será cancelada definitivamente si no verifico mis claves en este link.,True,phishing
+Me solicitan la clave de firma digital por teléfono para devolverme unos gastos de mantenimiento que me cobraron por error.,True,vishing
+Un supuesto inspector de policía me dice que mis cuentas están en peligro y que debo transferir todo mi saldo a una cuenta judicial.,True,vishing
+Alerta: Me piden transferir mi dinero a una cuenta segura porque mi cuenta está bajo ataque.,True,vishing
+"Alerta: Hola mamá, he perdido el móvil. Por favor envíame dinero urgente por Bizum a este número.",True,suplantacion_familiar
+"Alerta: Hola papá, mi móvil se ha roto y no puedo llamar. Necesito pagar una factura urgente, hazme un Bizum.",True,suplantacion_familiar
+Alerta: Su cuenta bancaria ha sido bloqueada temporalmente por seguridad. Pulse en este enlace para reactivarla inmediatamente: https://bancoseguro.com,True,phishing
+"Alerta: Para evitar cargos mensuales adicionales, confirme sus claves de seguridad y DNI en el siguiente enlace urgente.",True,phishing
+"Alerta: Le llamo del departamento de seguridad del banco. Para cancelar una compra no autorizada, necesito que me diga el código SMS que acaba de recibir.",True,vishing
+Alerta: Un técnico de soporte de su banco me dice que debe conectarse a mi móvil con AnyDesk para solucionar un problema en mi banca.,True,soporte_falso
+Alerta: Me llama un supuesto informático del banco diciendo que hay un virus en mi cuenta y que tengo que facilitarle mi PIN.,True,soporte_falso
+Alerta: Urgente: Se ha detectado una transferencia sospechosa de 800 euros en su cuenta. Cancele el envío pulsando aquí: https://seguridad-alertas.com,True,phishing
+"Alerta: Estimado cliente, su tarjeta ha sido desactivada temporalmente. Valide su identidad en 2 horas para evitar cargos de bloqueo: https://santander-acceso.com",True,phishing
+Alerta: Me dicen que haga un Bizum urgente de 100 euros para desbloquear mi cuenta corriente que ha sido suspendida.,True,vishing
+Alerta: Me llaman del banco diciendo que hay un cobro duplicado de 300 euros y que necesitan mi clave de firma para anularlo.,True,vishing
+Alerta: Un mensaje de Correos dice que mi paquete no se puede entregar por falta de pago de tasas y me da un link para poner mi tarjeta.,True,phishing
+"Alerta: Hola abuela, soy tu nieto, he tenido un accidente con el coche y necesito que me envíes 600 euros urgentemente, no le digas nada a nadie.",True,suplantacion_familiar
+Alerta: Me escribe mi supuesto sobrino diciendo que está retenido por la aduana y necesita que le haga un Bizum de inmediato.,True,suplantacion_familiar
+Alerta: Un SMS de Hacienda me dice que tengo un reembolso de 120 euros pendiente y que pinche en el enlace para rellenar los datos de mi tarjeta.,True,phishing
+Alerta: Me llaman diciendo que son de la distribuidora de luz y que si no pago una factura pendiente de 150 euros ahora mismo cortan la luz.,True,vishing
+Alerta: Un correo electrónico del BBVA me advierte que mi cuenta será cancelada definitivamente si no verifico mis claves en este link.,True,phishing
+Alerta: Me solicitan la clave de firma digital por teléfono para devolverme unos gastos de mantenimiento que me cobraron por error.,True,vishing
+Alerta: Un supuesto inspector de policía me dice que mis cuentas están en peligro y que debo transferir todo mi saldo a una cuenta judicial.,True,vishing
+Me ha llegado esto: Me piden transferir mi dinero a una cuenta segura porque mi cuenta está bajo ataque.,True,vishing
+"Me ha llegado esto: Hola mamá, he perdido el móvil. Por favor envíame dinero urgente por Bizum a este número.",True,suplantacion_familiar
+"Me ha llegado esto: Hola papá, mi móvil se ha roto y no puedo llamar. Necesito pagar una factura urgente, hazme un Bizum.",True,suplantacion_familiar
+Me ha llegado esto: Su cuenta bancaria ha sido bloqueada temporalmente por seguridad. Pulse en este enlace para reactivarla inmediatamente: https://bancoseguro.com,True,phishing
+"Me ha llegado esto: Para evitar cargos mensuales adicionales, confirme sus claves de seguridad y DNI en el siguiente enlace urgente.",True,phishing
+"Me ha llegado esto: Le llamo del departamento de seguridad del banco. Para cancelar una compra no autorizada, necesito que me diga el código SMS que acaba de recibir.",True,vishing
+Me ha llegado esto: Un técnico de soporte de su banco me dice que debe conectarse a mi móvil con AnyDesk para solucionar un problema en mi banca.,True,soporte_falso
+Me ha llegado esto: Me llama un supuesto informático del banco diciendo que hay un virus en mi cuenta y que tengo que facilitarle mi PIN.,True,soporte_falso
+Me ha llegado esto: Urgente: Se ha detectado una transferencia sospechosa de 800 euros en su cuenta. Cancele el envío pulsando aquí: https://seguridad-alertas.com,True,phishing
+"Me ha llegado esto: Estimado cliente, su tarjeta ha sido desactivada temporalmente. Valide su identidad en 2 horas para evitar cargos de bloqueo: https://santander-acceso.com",True,phishing
+Me ha llegado esto: Me dicen que haga un Bizum urgente de 100 euros para desbloquear mi cuenta corriente que ha sido suspendida.,True,vishing
+Me ha llegado esto: Me llaman del banco diciendo que hay un cobro duplicado de 300 euros y que necesitan mi clave de firma para anularlo.,True,vishing
+Me ha llegado esto: Un mensaje de Correos dice que mi paquete no se puede entregar por falta de pago de tasas y me da un link para poner mi tarjeta.,True,phishing
+"Me ha llegado esto: Hola abuela, soy tu nieto, he tenido un accidente con el coche y necesito que me envíes 600 euros urgentemente, no le digas nada a nadie.",True,suplantacion_familiar
+Me ha llegado esto: Me escribe mi supuesto sobrino diciendo que está retenido por la aduana y necesita que le haga un Bizum de inmediato.,True,suplantacion_familiar
+Me ha llegado esto: Un SMS de Hacienda me dice que tengo un reembolso de 120 euros pendiente y que pinche en el enlace para rellenar los datos de mi tarjeta.,True,phishing
+Me ha llegado esto: Me llaman diciendo que son de la distribuidora de luz y que si no pago una factura pendiente de 150 euros ahora mismo cortan la luz.,True,vishing
+Me ha llegado esto: Un correo electrónico del BBVA me advierte que mi cuenta será cancelada definitivamente si no verifico mis claves en este link.,True,phishing
+Me ha llegado esto: Me solicitan la clave de firma digital por teléfono para devolverme unos gastos de mantenimiento que me cobraron por error.,True,vishing
+Me ha llegado esto: Un supuesto inspector de policía me dice que mis cuentas están en peligro y que debo transferir todo mi saldo a una cuenta judicial.,True,vishing
+Me acaban de mandar lo siguiente: 'Me piden transferir mi dinero a una cuenta segura porque mi cuenta está bajo ataque.',True,vishing
+"Me acaban de mandar lo siguiente: 'Hola mamá, he perdido el móvil. Por favor envíame dinero urgente por Bizum a este número.'",True,suplantacion_familiar
+"Me acaban de mandar lo siguiente: 'Hola papá, mi móvil se ha roto y no puedo llamar. Necesito pagar una factura urgente, hazme un Bizum.'",True,suplantacion_familiar
+Me acaban de mandar lo siguiente: 'Su cuenta bancaria ha sido bloqueada temporalmente por seguridad. Pulse en este enlace para reactivarla inmediatamente: https://bancoseguro.com',True,phishing
+"Me acaban de mandar lo siguiente: 'Para evitar cargos mensuales adicionales, confirme sus claves de seguridad y DNI en el siguiente enlace urgente.'",True,phishing
+"Me acaban de mandar lo siguiente: 'Le llamo del departamento de seguridad del banco. Para cancelar una compra no autorizada, necesito que me diga el código SMS que acaba de recibir.'",True,vishing
+Me acaban de mandar lo siguiente: 'Un técnico de soporte de su banco me dice que debe conectarse a mi móvil con AnyDesk para solucionar un problema en mi banca.',True,soporte_falso
+Me acaban de mandar lo siguiente: 'Me llama un supuesto informático del banco diciendo que hay un virus en mi cuenta y que tengo que facilitarle mi PIN.',True,soporte_falso
+Me acaban de mandar lo siguiente: 'Urgente: Se ha detectado una transferencia sospechosa de 800 euros en su cuenta. Cancele el envío pulsando aquí: https://seguridad-alertas.com',True,phishing
+"Me acaban de mandar lo siguiente: 'Estimado cliente, su tarjeta ha sido desactivada temporalmente. Valide su identidad en 2 horas para evitar cargos de bloqueo: https://santander-acceso.com'",True,phishing
+Me acaban de mandar lo siguiente: 'Me dicen que haga un Bizum urgente de 100 euros para desbloquear mi cuenta corriente que ha sido suspendida.',True,vishing
+Me acaban de mandar lo siguiente: 'Me llaman del banco diciendo que hay un cobro duplicado de 300 euros y que necesitan mi clave de firma para anularlo.',True,vishing
+Me acaban de mandar lo siguiente: 'Un mensaje de Correos dice que mi paquete no se puede entregar por falta de pago de tasas y me da un link para poner mi tarjeta.',True,phishing
+"Me acaban de mandar lo siguiente: 'Hola abuela, soy tu nieto, he tenido un accidente con el coche y necesito que me envíes 600 euros urgentemente, no le digas nada a nadie.'",True,suplantacion_familiar
+Me acaban de mandar lo siguiente: 'Me escribe mi supuesto sobrino diciendo que está retenido por la aduana y necesita que le haga un Bizum de inmediato.',True,suplantacion_familiar
+Me acaban de mandar lo siguiente: 'Un SMS de Hacienda me dice que tengo un reembolso de 120 euros pendiente y que pinche en el enlace para rellenar los datos de mi tarjeta.',True,phishing
+Me acaban de mandar lo siguiente: 'Me llaman diciendo que son de la distribuidora de luz y que si no pago una factura pendiente de 150 euros ahora mismo cortan la luz.',True,vishing
+Me acaban de mandar lo siguiente: 'Un correo electrónico del BBVA me advierte que mi cuenta será cancelada definitivamente si no verifico mis claves en este link.',True,phishing
+Me acaban de mandar lo siguiente: 'Me solicitan la clave de firma digital por teléfono para devolverme unos gastos de mantenimiento que me cobraron por error.',True,vishing
+Me acaban de mandar lo siguiente: 'Un supuesto inspector de policía me dice que mis cuentas están en peligro y que debo transferir todo mi saldo a una cuenta judicial.',True,vishing
+Me piden transferir mi dinero a una cuenta segura porque mi cuenta está bajo ataque.,True,vishing
+"Tengo una llamada donde hola mamá, he perdido el móvil. por favor envíame dinero urgente por bizum a este número.",True,suplantacion_familiar
+"Tengo una llamada donde hola papá, mi móvil se ha roto y no puedo llamar. necesito pagar una factura urgente, hazme un bizum.",True,suplantacion_familiar
+Tengo una llamada donde su cuenta bancaria ha sido bloqueada temporalmente por seguridad. pulse en este enlace para reactivarla inmediatamente: https://bancoseguro.com,True,phishing
+"Tengo una llamada donde para evitar cargos mensuales adicionales, confirme sus claves de seguridad y dni en el siguiente enlace urgente.",True,phishing
+"Tengo una llamada donde le llamo del departamento de seguridad del banco. para cancelar una compra no autorizada, necesito que me diga el código sms que acaba de recibir.",True,vishing
+Tengo una llamada donde un técnico de soporte de su banco me dice que debe conectarse a mi móvil con anydesk para solucionar un problema en mi banca.,True,soporte_falso
+Me llama un supuesto informático del banco diciendo que hay un virus en mi cuenta y que tengo que facilitarle mi PIN.,True,soporte_falso
+Tengo una llamada donde urgente: se ha detectado una transferencia sospechosa de 800 euros en su cuenta. cancele el envío pulsando aquí: https://seguridad-alertas.com,True,phishing
+"Tengo una llamada donde estimado cliente, su tarjeta ha sido desactivada temporalmente. valide su identidad en 2 horas para evitar cargos de bloqueo: https://santander-acceso.com",True,phishing
+Me dicen que haga un Bizum urgente de 100 euros para desbloquear mi cuenta corriente que ha sido suspendida.,True,vishing
+Me llaman del banco diciendo que hay un cobro duplicado de 300 euros y que necesitan mi clave de firma para anularlo.,True,vishing
+Tengo una llamada donde un mensaje de correos dice que mi paquete no se puede entregar por falta de pago de tasas y me da un link para poner mi tarjeta.,True,phishing
+"Tengo una llamada donde hola abuela, soy tu nieto, he tenido un accidente con el coche y necesito que me envíes 600 euros urgentemente, no le digas nada a nadie.",True,suplantacion_familiar
+Me escribe mi supuesto sobrino diciendo que está retenido por la aduana y necesita que le haga un Bizum de inmediato.,True,suplantacion_familiar
+Tengo una llamada donde un sms de hacienda me dice que tengo un reembolso de 120 euros pendiente y que pinche en el enlace para rellenar los datos de mi tarjeta.,True,phishing
+Me llaman diciendo que son de la distribuidora de luz y que si no pago una factura pendiente de 150 euros ahora mismo cortan la luz.,True,vishing
+Tengo una llamada donde un correo electrónico del bbva me advierte que mi cuenta será cancelada definitivamente si no verifico mis claves en este link.,True,phishing
+Me solicitan la clave de firma digital por teléfono para devolverme unos gastos de mantenimiento que me cobraron por error.,True,vishing
+Tengo una llamada donde un supuesto inspector de policía me dice que mis cuentas están en peligro y que debo transferir todo mi saldo a una cuenta judicial.,True,vishing
+¿Me ha llegado ya la pensión de este mes?,False,control_normal
+"Dime el saldo de mi cuenta corriente, por favor.",False,control_normal
+¿Cuánto me han cobrado de electricidad este mes?,False,control_normal
+Suma todos los gastos que tengo en medicinas.,False,control_normal
+¿Cuánto he gastado en el supermercado esta semana?,False,control_normal
+Apunta que he sacado 50 euros del cajero automático.,False,control_normal
+Anota que le he dado 10 euros a mi nieto para el cine.,False,control_normal
+¿Tengo alguna comisión de mantenimiento este mes?,False,control_normal
+¿Cuál ha sido el último movimiento de mi cuenta?,False,control_normal
+¿Cuánto pagué de teléfono la última vez?,False,control_normal
+¿Me llegará con lo que tengo para pagar el gas?,False,control_normal
+Anota un gasto de 12 euros en la panadería.,False,control_normal
+¿Cuánto llevo gastado en total este mes?,False,control_normal
+¿Cuánto dinero he ahorrado desde enero?,False,control_normal
+Revisa si me han cobrado dos veces en el súper.,False,control_normal
+Apunta 30 euros que saqué ayer para compras.,False,control_normal
+¿Cuánto he gastado en farmacia en el mes de marzo?,False,control_normal
+¿Cuánto pagué de gas el mes pasado?,False,control_normal
+¿Cuánto ha sido el recibo del agua?,False,control_normal
+¿Me han cobrado ya el seguro de la casa?,False,control_normal
+"Me ha llegado una carta del banco que no entiendo muy bien, ¿me la explicas?",False,control_normal
+Tengo aquí una notificación en papel sobre un cambio de condiciones de mi cuenta.,False,control_normal
+Quiero saber qué significa esta carta de comisiones que me ha enviado el banco.,False,control_normal
+He recibido un documento del banco donde pone algo de mantenimiento de cuenta de 240 euros.,False,control_normal
+Tengo un aviso impreso del banco sobre una nueva tarifa de mi tarjeta de débito.,False,control_normal
+"Me ha llegado una carta sobre el cobro de la hipoteca, ¿qué dice exactamente?",False,control_normal
+¿Este papel del banco dice que tengo que pagar alguna comisión nueva?,False,control_normal
+¿Me puedes explicar qué es esta carta que me ha llegado del catastro?,False,control_normal
+Me ha llegado una notificación del banco por correo electrónico en formato PDF.,False,control_normal
+Tengo un documento que habla de un cambio en el contrato de mi libreta de ahorros.,False,control_normal
+No encuentro el botón para ver el saldo en la aplicación del banco.,False,control_normal
+¿Dónde tengo que pulsar para ver los últimos movimientos en el móvil?,False,control_normal
+No sé cómo volver a la pantalla de inicio de la aplicación bancaria.,False,control_normal
+¿Cómo puedo ver cuánto dinero tengo en la tarjeta desde la app?,False,control_normal
+No encuentro el botón para hacer un Bizum en la pantalla del móvil.,False,control_normal
+¿Dónde está el menú para ver los recibos domiciliados en la aplicación?,False,control_normal
+La letra de la aplicación es muy pequeña y no consigo leer las opciones.,False,control_normal
+No sé dónde pulsar para salir de la aplicación del banco de forma segura.,False,control_normal
+¿Cómo se cambia la contraseña de acceso desde la app del móvil?,False,control_normal
+No veo el botón para enviar dinero a mi hijo en esta pantalla.,False,control_normal
+¿Me ha llegado ya la pensión de este mes?,False,control_normal
+"Por favor, dime el saldo de mi cuenta corriente, por favor.",False,control_normal
+¿Cuánto me han cobrado de electricidad este mes?,False,control_normal
+"Por favor, suma todos los gastos que tengo en medicinas.",False,control_normal
+¿Cuánto he gastado en el supermercado esta semana?,False,control_normal
+"Por favor, apunta que he sacado 50 euros del cajero automático.",False,control_normal
+"Por favor, anota que le he dado 10 euros a mi nieto para el cine.",False,control_normal
+¿Tengo alguna comisión de mantenimiento este mes?,False,control_normal
+¿Cuál ha sido el último movimiento de mi cuenta?,False,control_normal
+¿Cuánto pagué de teléfono la última vez?,False,control_normal
+¿Me llegará con lo que tengo para pagar el gas?,False,control_normal
+"Por favor, anota un gasto de 12 euros en la panadería.",False,control_normal
+¿Cuánto llevo gastado en total este mes?,False,control_normal
+¿Cuánto dinero he ahorrado desde enero?,False,control_normal
+"Por favor, revisa si me han cobrado dos veces en el súper.",False,control_normal
+"Por favor, apunta 30 euros que saqué ayer para compras.",False,control_normal
+¿Cuánto he gastado en farmacia en el mes de marzo?,False,control_normal
+¿Cuánto pagué de gas el mes pasado?,False,control_normal
+¿Cuánto ha sido el recibo del agua?,False,control_normal
+¿Me han cobrado ya el seguro de la casa?,False,control_normal
+"Por favor, me ha llegado una carta del banco que no entiendo muy bien, ¿me la explicas?",False,control_normal
+"Por favor, tengo aquí una notificación en papel sobre un cambio de condiciones de mi cuenta.",False,control_normal
+"Por favor, quiero saber qué significa esta carta de comisiones que me ha enviado el banco.",False,control_normal
+"Por favor, he recibido un documento del banco donde pone algo de mantenimiento de cuenta de 240 euros.",False,control_normal
+"Por favor, tengo un aviso impreso del banco sobre una nueva tarifa de mi tarjeta de débito.",False,control_normal
+"Por favor, me ha llegado una carta sobre el cobro de la hipoteca, ¿qué dice exactamente?",False,control_normal
+¿Este papel del banco dice que tengo que pagar alguna comisión nueva?,False,control_normal
+¿Me puedes explicar qué es esta carta que me ha llegado del catastro?,False,control_normal
+"Por favor, me ha llegado una notificación del banco por correo electrónico en formato pdf.",False,control_normal
+"Por favor, tengo un documento que habla de un cambio en el contrato de mi libreta de ahorros.",False,control_normal
+"Por favor, no encuentro el botón para ver el saldo en la aplicación del banco.",False,control_normal
+¿Dónde tengo que pulsar para ver los últimos movimientos en el móvil?,False,control_normal
+"Por favor, no sé cómo volver a la pantalla de inicio de la aplicación bancaria.",False,control_normal
+¿Cómo puedo ver cuánto dinero tengo en la tarjeta desde la app?,False,control_normal
+"Por favor, no encuentro el botón para hacer un bizum en la pantalla del móvil.",False,control_normal
+¿Dónde está el menú para ver los recibos domiciliados en la aplicación?,False,control_normal
+"Por favor, la letra de la aplicación es muy pequeña y no consigo leer las opciones.",False,control_normal
+"Por favor, no sé dónde pulsar para salir de la aplicación del banco de forma segura.",False,control_normal
+¿Cómo se cambia la contraseña de acceso desde la app del móvil?,False,control_normal
+"Por favor, no veo el botón para enviar dinero a mi hijo en esta pantalla.",False,control_normal
+Hola. ¿Me ha llegado ya la pensión de este mes?,False,control_normal
+"Hola. Dime el saldo de mi cuenta corriente, por favor.",False,control_normal
+Hola. ¿Cuánto me han cobrado de electricidad este mes?,False,control_normal
+Hola. Suma todos los gastos que tengo en medicinas.,False,control_normal
+Hola. ¿Cuánto he gastado en el supermercado esta semana?,False,control_normal
+Hola. Apunta que he sacado 50 euros del cajero automático.,False,control_normal
+Hola. Anota que le he dado 10 euros a mi nieto para el cine.,False,control_normal
+Hola. ¿Tengo alguna comisión de mantenimiento este mes?,False,control_normal
+Hola. ¿Cuál ha sido el último movimiento de mi cuenta?,False,control_normal
+Hola. ¿Cuánto pagué de teléfono la última vez?,False,control_normal
+Hola. ¿Me llegará con lo que tengo para pagar el gas?,False,control_normal
+Hola. Anota un gasto de 12 euros en la panadería.,False,control_normal
+Hola. ¿Cuánto llevo gastado en total este mes?,False,control_normal
+Hola. ¿Cuánto dinero he ahorrado desde enero?,False,control_normal
+Hola. Revisa si me han cobrado dos veces en el súper.,False,control_normal
+Hola. Apunta 30 euros que saqué ayer para compras.,False,control_normal
+Hola. ¿Cuánto he gastado en farmacia en el mes de marzo?,False,control_normal
+Hola. ¿Cuánto pagué de gas el mes pasado?,False,control_normal
+Hola. ¿Cuánto ha sido el recibo del agua?,False,control_normal
+Hola. ¿Me han cobrado ya el seguro de la casa?,False,control_normal

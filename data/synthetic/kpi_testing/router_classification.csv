@@ -1,0 +1,201 @@
+text,expected_category
+¿Me ha llegado ya la pensión de este mes?,MANAGEMENT
+Mira a ver si me han ingresado el dinero de la jubilación.,MANAGEMENT
+¿Cuánto dinero me queda en la libreta?,MANAGEMENT
+"Dime el saldo de mi cuenta corriente, por favor.",MANAGEMENT
+¿He pagado ya el recibo de la luz?,MANAGEMENT
+¿Cuánto me han cobrado de electricidad este mes?,MANAGEMENT
+¿Cuánto me he gastado en la farmacia últimamente?,MANAGEMENT
+Suma todos los gastos que tengo en medicinas.,MANAGEMENT
+¿Cuánto he gastado en el supermercado esta semana?,MANAGEMENT
+Dime el total de las compras de alimentación.,MANAGEMENT
+Apunta que he sacado 50 euros del cajero automático.,MANAGEMENT
+Registra una retirada de efectivo de 20 euros.,MANAGEMENT
+Anota que le he dado 10 euros a mi nieto para el cine.,MANAGEMENT
+¿Tengo alguna comisión de mantenimiento este mes?,MANAGEMENT
+Mira si el banco me ha cobrado comisiones raras.,MANAGEMENT
+¿Cuál ha sido el último movimiento de mi cuenta?,MANAGEMENT
+Dime lo último que he pagado con la tarjeta.,MANAGEMENT
+¿Cuánto pagué de teléfono la última vez?,MANAGEMENT
+Mira a ver el recibo de Movistar cuánto ha sido.,MANAGEMENT
+¿Tengo saldo suficiente para pagar el recibo que viene?,MANAGEMENT
+¿Me llegará con lo que tengo para pagar el gas?,MANAGEMENT
+Anota un gasto de 12 euros en la panadería.,MANAGEMENT
+"He gastado 8 euros en la cafetería, apúntalo.",MANAGEMENT
+¿Cuánto llevo gastado en total este mes?,MANAGEMENT
+¿Cuánto dinero he ahorrado desde enero?,MANAGEMENT
+¿Ha entrado algún ingreso nuevo hoy?,MANAGEMENT
+Quiero saber si me han devuelto lo del seguro.,MANAGEMENT
+¿Tengo algún cargo duplicado en la cuenta?,MANAGEMENT
+Revisa si me han cobrado dos veces en el súper.,MANAGEMENT
+Apunta 30 euros que saqué ayer para compras.,MANAGEMENT
+Registra un gasto en efectivo de 15 euros en el mercado.,MANAGEMENT
+¿Cuánto he gastado en farmacia en el mes de marzo?,MANAGEMENT
+Dime los gastos de farmacia de este mes.,MANAGEMENT
+¿Cuánto pagué de gas el mes pasado?,MANAGEMENT
+¿Cuánto ha sido el recibo del agua?,MANAGEMENT
+¿Me han cobrado ya el seguro de la casa?,MANAGEMENT
+¿Cuánto dinero tengo en total sumando las dos cuentas?,MANAGEMENT
+Dime el saldo total disponible.,MANAGEMENT
+¿Tengo alguna alerta de descubierto en mi cuenta?,MANAGEMENT
+Anota que he pagado 25 euros en la frutería.,MANAGEMENT
+Apunta 5 euros que me costó el taxi.,MANAGEMENT
+¿Cuánto he gastado en total en el supermercado Día?,MANAGEMENT
+Dime la suma de lo gastado en Mercadona.,MANAGEMENT
+¿Me han cobrado alguna comisión por usar el cajero?,MANAGEMENT
+¿Hay algún cobro extraño en la cuenta esta semana?,MANAGEMENT
+¿Cuánto dinero en efectivo me queda en el monedero digital?,MANAGEMENT
+Dime el saldo del monedero de efectivo.,MANAGEMENT
+Apunta 40 euros que saqué del cajero de la esquina.,MANAGEMENT
+Anota que gasté 18 euros en medicinas.,MANAGEMENT
+¿Cuándo se cobra la pensión normalmente?,MANAGEMENT
+Me acaban de mandar un mensaje diciendo que mi cuenta está bloqueada y que entre en un enlace.,SCAM
+Me piden que verifique mis claves bancarias a través de un link urgente.,SCAM
+Un señor me ha llamado diciendo que es de mi banco y que le dé un código que me ha llegado al móvil.,SCAM
+Me ha llegado un SMS que dice que he hecho una compra de 500 euros y que llame a un número si no la reconozco.,SCAM
+Dicen que si no pago una deuda ahora mismo con Bizum vendrá la policía.,SCAM
+Me piden por WhatsApp que envíe dinero urgente a mi hijo que dice que ha perdido el teléfono.,SCAM
+Mamá he perdido el móvil y necesito que me hagas una transferencia de 400 euros a esta cuenta.,SCAM
+"Hola abuela, soy tu nieto, he tenido un problema y necesito dinero ya, no se lo digas a mis padres.",SCAM
+Me llama un técnico de Microsoft diciendo que mi ordenador tiene un virus y que entre a mi banco.,SCAM
+Un informático me dice que tiene que controlar mi móvil para arreglar la aplicación de banca.,SCAM
+Me dicen que transfiera mis ahorros a una cuenta segura porque mi banco está bajo ataque.,SCAM
+Me piden que cambie todo mi dinero a una cuenta de seguridad para protegerlo de un fraude.,SCAM
+Un mensaje dice que mi tarjeta de crédito ha sido suspendida y debo poner el PIN en una web.,SCAM
+Me ha llegado un correo electrónico pidiendo mi contraseña de banca online para actualizar el sistema.,SCAM
+Me exigen que haga un pago inmediato por Bizum o me bloquearán las cuentas para siempre.,SCAM
+Me están llamando y me dicen que no cuelgue el teléfono o perderé todo mi dinero.,SCAM
+Me dicen que confirme mis datos personales y de tarjeta en este enlace para evitar una penalización.,SCAM
+Un mensaje de Correos dice que tengo un paquete pendiente y debo pagar 2 euros metiendo mi tarjeta.,SCAM
+Dicen que me ha tocado un premio de la lotería y que para cobrarlo debo dar mis claves del banco.,SCAM
+Me llama una mujer diciendo que es de la seguridad social y quiere mi cuenta para ingresarme una ayuda.,SCAM
+Me ha llegado un mensaje SMS con un enlace de BBVA diciendo que valide mi acceso.,SCAM
+Un correo dice que mi cuenta de CaixaBank ha sido restringida y debo reactivarla metiendo mis datos.,SCAM
+Me piden que haga un Bizum a un número desconocido para anular un cargo falso.,SCAM
+Me dice un chico por teléfono que si le doy el código SMS me devolverán una comisión cobrada por error.,SCAM
+Un mensaje de WhatsApp de un número raro dice que es mi hija y que necesita dinero urgente.,SCAM
+Me piden que instale un programa en el móvil para que el banco me pueda ayudar a distancia.,SCAM
+Un SMS dice que si no pulso en el enlace me cobrarán una multa de Hacienda de forma inmediata.,SCAM
+Me dicen que han entrado en mi cuenta y que para bloquear el acceso debo facilitar mis coordenadas.,SCAM
+Un supuesto empleado del banco me pide por teléfono que le lea los números de mi tarjeta de crédito.,SCAM
+Me dicen que mi cuenta tiene un cargo de Amazon de 300 euros y que meta mi contraseña para cancelarlo.,SCAM
+Me escriben diciendo que tengo que actualizar mis datos de seguridad en menos de 24 horas.,SCAM
+Me ha llegado una alerta de seguridad muy urgente diciendo que alguien está intentando sacar dinero.,SCAM
+Dicen que son de mi compañía de la luz y que si no pago por Bizum ahora mismo me cortan el suministro.,SCAM
+Un SMS de Santander dice que mi banca móvil ha sido desactivada por seguridad y da un enlace.,SCAM
+Me piden mis claves por teléfono porque dicen que hay una transferencia sospechosa que deben detener.,SCAM
+Un correo electrónico de mi banco me pide que confirme las preguntas de seguridad y mi PIN.,SCAM
+Me ha llegado un mensaje sospechoso que dice que firme una operación de Bizum para recibir un reembolso.,SCAM
+Me piden la clave de firma digital para autorizar una devolución de dinero.,SCAM
+Un supuesto policía me llama diciendo que mi cuenta está siendo usada para fraudes y debo cooperar dándole mis claves.,SCAM
+Me dicen que he ganado un sorteo del banco y que introduzca mi número de cuenta y clave de acceso.,SCAM
+Me envían un enlace por SMS para evitar que mi tarjeta de débito caduque hoy mismo.,SCAM
+Me ha llamado mi supuesto sobrino diciendo que está retenido en el aeropuerto y necesita 500 euros.,SCAM
+Me piden que envíe dinero a través de una empresa de envíos urgentes porque un familiar está enfermo.,SCAM
+Un correo electrónico dice que mi declaración de la renta es a devolver y me pide la tarjeta.,SCAM
+Me envían un mensaje con un enlace acortado que dice que mi cuenta bancaria ha sido bloqueada temporalmente.,SCAM
+Me llaman diciendo que son del servicio de prevención de fraudes del banco y me piden verificar mis claves.,SCAM
+Un mensaje de texto me avisa de un cargo inusual y me da un botón para cancelarlo metiendo mis datos.,SCAM
+Me solicitan por correo mi número de tarjeta y el código CVV de atrás para validar mi cuenta.,SCAM
+Me exigen hacer una transferencia a un número de cuenta extranjero para solucionar un problema judicial urgente.,SCAM
+Me ha llegado un SMS amenazante diciendo que si no pago una supuesta tasa perderé mis derechos de pensión.,SCAM
+"Me ha llegado una carta del banco que no entiendo muy bien, ¿me la explicas?",DOCUMENT
+Tengo aquí una notificación en papel sobre un cambio de condiciones de mi cuenta.,DOCUMENT
+Quiero saber qué significa esta carta de comisiones que me ha enviado el banco.,DOCUMENT
+He recibido un documento del banco donde pone algo de mantenimiento de cuenta de 240 euros.,DOCUMENT
+¿Me puedes leer este papel que me ha llegado por correo postal de mi sucursal?,DOCUMENT
+Tengo un aviso impreso del banco sobre una nueva tarifa de mi tarjeta de débito.,DOCUMENT
+"Me ha llegado una carta sobre el cobro de la hipoteca, ¿qué dice exactamente?",DOCUMENT
+¿Este papel del banco dice que tengo que pagar alguna comisión nueva?,DOCUMENT
+"He recibido una carta extraña que parece del banco, no sé si es verdadera o falsa.",DOCUMENT
+¿Me puedes explicar qué es esta carta que me ha llegado del catastro?,DOCUMENT
+Me ha llegado una notificación del banco por correo electrónico en formato PDF.,DOCUMENT
+Tengo un documento que habla de un cambio en el contrato de mi libreta de ahorros.,DOCUMENT
+¿Me puedes resumir esta carta informativa que me ha enviado mi gestor del banco?,DOCUMENT
+Me ha llegado un papel donde pone que me van a cobrar por tener la cuenta abierta.,DOCUMENT
+¿Qué significa este cambio de condiciones contractuales que viene en esta carta?,DOCUMENT
+Tengo una carta del banco sobre comisiones y quiero saber si es correcta.,DOCUMENT
+Ayúdame a entender este extracto bancario mensual que me ha llegado a casa.,DOCUMENT
+Me ha llegado una carta que dice que mi oficina del banco va a cerrar.,DOCUMENT
+Tengo un documento en papel sobre la renovación de mi tarjeta de crédito.,DOCUMENT
+Quiero que revises esta carta donde dice que tengo un cargo pendiente.,DOCUMENT
+¿Me puedes explicar qué significa este recibo impreso del seguro del coche?,DOCUMENT
+He recibido un aviso por escrito de que me van a subir el coste de mantenimiento.,DOCUMENT
+Tengo una notificación en papel del banco que me pide actualizar mi DNI.,DOCUMENT
+"Me ha llegado una carta sobre la subida de los intereses, ¿me la traduces a lenguaje sencillo?",DOCUMENT
+¿Este papel que me ha llegado del banco es un recibo o una reclamación de pago?,DOCUMENT
+Tengo un documento que habla de la cancelación de mi depósito a plazo fijo.,DOCUMENT
+¿Me puedes explicar este papel informativo sobre los nuevos horarios de la oficina?,DOCUMENT
+"Me ha llegado una carta del banco sobre las pensiones de este año, ¿qué dice?",DOCUMENT
+"Tengo un aviso de cobro de un impuesto municipal por escrito, ¿cuándo me lo cobran?",DOCUMENT
+¿Qué significa esta carta que dice que mi cuenta pasa a ser de tarifa plana?,DOCUMENT
+"Tengo un folleto del banco sobre un fondo de inversión, ¿es seguro para mí?",DOCUMENT
+Me ha llegado una carta reclamando una documentación que no sé qué es.,DOCUMENT
+¿Me puedes aclarar qué es este papel de la comunidad de vecinos del banco?,DOCUMENT
+Tengo una carta que dice que tengo que firmar unas condiciones nuevas de banca online.,DOCUMENT
+Me ha llegado una notificación escrita de que mi cuenta tiene saldo negativo.,DOCUMENT
+¿Qué significa este papel que dice que mi tarjeta de débito tiene comisiones adicionales?,DOCUMENT
+Tengo un extracto bancario en papel con unos números muy pequeños que no veo bien.,DOCUMENT
+¿Me puedes resumir lo más importante de esta carta que me ha llegado de la seguridad social?,DOCUMENT
+He recibido un aviso de una comisión de 120 euros anuales por correo postal.,DOCUMENT
+Tengo una carta del banco que habla de un seguro de vida asociado a mi cuenta.,DOCUMENT
+¿Me explicas este papel que me han dado hoy en la sucursal del banco?,DOCUMENT
+Tengo un documento de liquidación de intereses de mi cuenta de ahorro.,DOCUMENT
+"Me ha llegado una carta sobre el cobro de la tasa de basuras, ¿qué significa?",DOCUMENT
+¿Qué pone en esta carta del banco sobre la protección de datos?,DOCUMENT
+Tengo un aviso impreso de que mi tarjeta ha sido renovada automáticamente.,DOCUMENT
+Me ha llegado una carta que dice que tengo derecho a un reembolso de comisiones.,DOCUMENT
+"Tengo una carta del banco de seguros que no entiendo, ¿me ayudas?",DOCUMENT
+¿Me puedes leer este documento que me ha llegado con el membrete del banco de España?,DOCUMENT
+Tengo una notificación por escrito de un cargo de 45 euros de mantenimiento.,DOCUMENT
+¿Qué significa este aviso en papel sobre la jubilación y los planes de pensiones?,DOCUMENT
+No encuentro el botón para ver el saldo en la aplicación del banco.,INTERFACE
+¿Dónde tengo que pulsar para ver los últimos movimientos en el móvil?,INTERFACE
+La pantalla de la aplicación se ha quedado en blanco y no me deja hacer nada.,INTERFACE
+No sé cómo volver a la pantalla de inicio de la aplicación bancaria.,INTERFACE
+¿Cómo puedo ver cuánto dinero tengo en la tarjeta desde la app?,INTERFACE
+No encuentro el botón para hacer un Bizum en la pantalla del móvil.,INTERFACE
+¿Dónde está el menú para ver los recibos domiciliados en la aplicación?,INTERFACE
+Me sale un mensaje de error en la pantalla del banco y no sé qué significa.,INTERFACE
+La letra de la aplicación es muy pequeña y no consigo leer las opciones.,INTERFACE
+No sé dónde pulsar para salir de la aplicación del banco de forma segura.,INTERFACE
+¿Cómo se cambia la contraseña de acceso desde la app del móvil?,INTERFACE
+No veo el botón para enviar dinero a mi hijo en esta pantalla.,INTERFACE
+Me pide una clave en la pantalla y no sé si es la de acceso o la de firma.,INTERFACE
+¿Dónde tengo que tocar para descargar el recibo de la luz en el móvil?,INTERFACE
+La aplicación me dice que actualice la app y no sé dónde hay que darle.,INTERFACE
+No sé cómo ver si me han cobrado el recibo del agua desde el móvil.,INTERFACE
+¿Dónde se pulsa para ver los datos de mi tarjeta de débito en la app?,INTERFACE
+"No me aclaro con el menú nuevo del banco, ¿dónde están mis cuentas?",INTERFACE
+Me sale un círculo dando vueltas en la pantalla del banco y no avanza.,INTERFACE
+No sé dónde está la opción para hacer una transferencia en la aplicación.,INTERFACE
+¿Cómo puedo ver el extracto del mes pasado en la pantalla del móvil?,INTERFACE
+No encuentro el botón de ayuda dentro de la aplicación de banca.,INTERFACE
+La aplicación me pide que escanee mi cara y no sé cómo se hace.,INTERFACE
+¿Dónde se pulsa para activar la nueva tarjeta en la aplicación móvil?,INTERFACE
+No sé cómo buscar un movimiento antiguo en la pantalla de la app.,INTERFACE
+"Me sale un aviso de cookies en la app y no me deja ver el saldo, ¿dónde doy?",INTERFACE
+No encuentro el botón para configurar las notificaciones en el móvil.,INTERFACE
+¿Cómo puedo ver los detalles de una compra en la pantalla del banco?,INTERFACE
+No sé dónde se pulsa para bizumear dinero a un contacto de mi agenda.,INTERFACE
+Me pide que ponga la huella digital y no sé dónde hay que poner el dedo.,INTERFACE
+¿Dónde está la opción de contacto con mi oficina en la aplicación?,INTERFACE
+No sé cómo borrar un gasto anotado en la app del banco.,INTERFACE
+"La aplicación del banco me dice que la sesión ha caducado, ¿qué hago?",INTERFACE
+¿Dónde se pulsa para ver el saldo de la libreta de ahorros en la app?,INTERFACE
+No encuentro el botón para apagar la tarjeta temporalmente en el móvil.,INTERFACE
+¿Cómo puedo ver los gastos del supermercado agrupados en la app?,INTERFACE
+No sé dónde se pulsa para aceptar las nuevas condiciones en la pantalla.,INTERFACE
+"Me sale un teclado en la pantalla que no tiene números, ¿cómo escribo?",INTERFACE
+No encuentro la pestaña de mis tarjetas en el menú de la aplicación.,INTERFACE
+¿Dónde tengo que dar para ver el saldo de mi cuenta de ahorro?,INTERFACE
+No sé cómo enviar un justificante de pago desde la aplicación del móvil.,INTERFACE
+¿Cómo se hace para ver los números de mi cuenta IBAN en la app?,INTERFACE
+No encuentro el botón para reclamar una comisión dentro del móvil.,INTERFACE
+"La pantalla me pide un código SMS pero no me llega nada, ¿dónde pulso?",INTERFACE
+No sé dónde está el botón para ver los movimientos de efectivo anotados.,INTERFACE
+¿Cómo vuelvo al menú principal del banco si me he metido en transferencias?,INTERFACE
+No encuentro el botón para ver los recibos pendientes de pago en la app.,INTERFACE
+¿Dónde se pulsa para cambiar el límite de dinero de mi tarjeta?,INTERFACE
+No me sale el teclado en la pantalla para poner mi clave de acceso.,INTERFACE
+¿Cómo puedo ver los datos de contacto del servicio técnico en la app?,INTERFACE

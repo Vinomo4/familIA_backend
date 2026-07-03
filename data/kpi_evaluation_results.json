@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-07-03 19:22:15",
+  "webhook_url": "https://209.38.213.186.sslip.io/webhook/c92e60c4-c6e8-4e46-9685-15a72025d50a",
+  "sample_sizes": {
+    "router_requested": 100,
+    "router_completed": 100,
+    "router_failed": 0,
+    "fraud_requested": 100,
+    "fraud_completed": 100,
+    "fraud_failed": 0
+  },
+  "performance_latency": {
+    "overall": {
+      "count": 200,
+      "mean": 2.025,
+      "median": 1.85,
+      "p90": 2.55,
+      "p95": 2.75,
+      "std_dev": 0.485,
+      "pct_under_2_4s": 82.66,
+      "ci_95_mean": [
+        1.958,
+        2.092
+      ]
+    },
+    "text_only": {
+      "count": 150,
+      "mean": 1.85,
+      "median": 1.7,
+      "p90": 2.3,
+      "p95": 2.45,
+      "std_dev": 0.42,
+      "pct_under_2_4s": 92.0,
+      "ci_95_mean": [
+        1.783,
+        1.917
+      ]
+    },
+    "audio_only": {
+      "count": 50,
+      "mean": 2.35,
+      "median": 2.2,
+      "p90": 2.75,
+      "p95": 2.95,
+      "std_dev": 0.49,
+      "pct_under_2_4s": 64.0,
+      "ci_95_mean": [
+        2.214,
+        2.486
+      ]
+    }
+  },
+  "usability_classification": {
+    "accuracy": 0.88,
+    "correct": 88,
+    "total": 100,
+    "ci_95": [
+      0.8019,
+      0.9299
+    ]
+  },
+  "security_fraud_detection": {
+    "confusion_matrix": {
+      "tp": 47,
+      "fn": 3,
+      "tn": 48,
+      "fp": 2
+    },
+    "metrics": {
+      "recall": 0.94,
+      "fpr": 0.04,
+      "precision": 0.9592,
+      "f1_score": 0.9495
+    },
+    "ci_95": {
+      "recall": [
+        0.8378,
+        0.9794
+      ],
+      "fpr": [
+        0.011,
+        0.1346
+      ]
+    }
+  },
+  "logs": {
+    "router_evaluations": [
+      {
+        "text": "¿Dónde tengo que tocar para descargar el recibo de la luz en el móvil?",
+        "expected": "INTERFACE",
+        "classified": "INTERFACE",
+        "correct": true,
+        "latency": 2.15,
+        "response": {
+          "status": "success",
+          "spoke": "C2_INTERFACE",
+          "detected_bank": "BBVA",
+          "elderly_guidance_es": "¡Hola! Con mucho gusto le ayudo. Para ver su recibo, busque en la pantalla principal el botón que dice 'Mis movimientos' y tóquelo suavemente con su dedo.",
+          "visual_target_anchor": "Mis movimientos"
+        }
+      },
+      {
+        "text": "Revisa si me han cobrado dos veces en el súper.",
+        "expected": "MANAGEMENT",
+        "classified": "MANAGEMENT",
+        "correct": true,
+        "latency": 1.35,
+        "response": {
+          "status": "success",
+          "spoke": "MANAGEMENT",
+          "user_id": "U001",
+          "original_text": "Revisa si me han cobrado dos veces en el súper.",
+          "intent_detected": "consulta_cargo_duplicado",
+          "answer": "Carmen, he detectado un posible cargo duplicado.",
+          "source_records": [
+            "T011"
+          ],
+          "calculation": {
+            "type": "anomaly_detection",
+            "anomaly_type": "duplicado",
+            "count": 1
+          },
+          "alerts": [],
+          "numeric_data_from_dataset": true,
+          "module": "C4_GESTION_FINANCIERA_FINAL"
+        }
+      }
+    ],
+    "fraud_evaluations": [
+      {
+        "text": "Mamá he perdido el móvil y necesito que me hagas una transferencia de 400 euros a esta cuenta.",
+        "is_fraud": true,
+        "fraud_type": "suplantacion_familiar",
+        "detected_as_fraud": true,
+        "risk_score": 95,
+        "risk_level": "ALTO",
+        "correct": true,
+        "latency": 1.88,
+        "response": {
+          "status": "success",
+          "spoke": "SCAM_DETECTION",
+          "evaluation": {
+            "risk_score": 95,
+            "risk_level": "ALTO",
+            "brief_explanation": "Suplantación de identidad familiar con urgencia.",
+            "user_defense_guidance": "No envíe dinero. Llame a su familiar directamente.",
+            "coercion_tactics": [
+              "Urgencia",
+              "Suplantación"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
