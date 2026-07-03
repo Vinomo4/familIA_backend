@@ -1,18 +1,20 @@
 {
+  "name": "FamilIA - Main Hub",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
         "path": "c92e60c4-c6e8-4e46-9685-15a72025d50a",
+        "responseMode": "lastNode",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -736,
-        1824
+        -2048,
+        432
       ],
-      "id": "2ffc6fd0-89da-4224-921f-b1f474ab0778",
+      "id": "8f060e8c-fdc1-43dc-9bef-3078d48f3056",
       "name": "Webhook",
       "webhookId": "c92e60c4-c6e8-4e46-9685-15a72025d50a"
     },
@@ -23,10 +25,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -176,
-        1632
+        -1488,
+        240
       ],
-      "id": "cc1d4bc2-78a8-43e3-98d2-83acb787956e",
+      "id": "13c99326-a822-472c-9dcf-16b3ad18e883",
       "name": "Aggregate Data"
     },
     {
@@ -59,15 +61,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        -416,
-        1616
+        -1728,
+        224
       ],
-      "id": "ed58cd8e-e2af-49c7-86d1-28919d698741",
+      "id": "0d4fd625-a741-4f46-8c58-992ffc382ebd",
       "name": "HTTP Request (STT)",
       "credentials": {
         "httpMultipleHeadersAuth": {
-          "id": "wLNGcUvykTo5GOnn",
-          "name": "Multiple Headers Auth account"
+          "id": "Rjxa5yGyElFMiBo9",
+          "name": "Multiple Headers Auth account 2"
         }
       }
     },
@@ -84,10 +86,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -16,
-        1632
+        -1328,
+        240
       ],
-      "id": "9b464e15-d522-4157-92b1-569713a1e3b1",
+      "id": "efccf85c-3889-456d-b502-83ae74366013",
       "name": "Router AI Agent"
     },
     {
@@ -98,10 +100,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        160,
-        1984
+        -1152,
+        592
       ],
-      "id": "676b1825-e7a3-4e1f-b460-79d9a970ab18",
+      "id": "804b1521-2051-4a2b-96e8-3bde5b3b60e7",
       "name": "Structured Output Parser"
     },
     {
@@ -207,10 +209,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        320,
-        1696
+        -992,
+        304
       ],
-      "id": "2def5a55-6c01-4137-bd65-99ece1025f38",
+      "id": "e1d70c09-19d4-4824-932c-eb81163deb96",
       "name": "Switch Intents"
     },
     {
@@ -224,13 +226,13 @@
           ]
         }
       },
-      "id": "c02055d2-50de-4bbb-baaf-82f0f833135d",
+      "id": "b44780be-1c27-40f5-ba2d-8fb04dba2c1c",
       "name": "Audio file?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -576,
-        1824
+        -1888,
+        432
       ]
     },
     {
@@ -241,10 +243,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -96,
-        2000
+        -1408,
+        608
       ],
-      "id": "fdc13425-fb0c-4526-811f-f232b651c5b2",
+      "id": "90092a2f-db62-4557-b2d4-15dfa72c64bb",
       "name": "Gemini 3.1 Flash Lite",
       "credentials": {
         "googlePalmApi": {
@@ -261,10 +263,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        32,
-        2000
+        -1280,
+        608
       ],
-      "id": "20fc462d-9d60-45f4-895d-6e98a4f804b6",
+      "id": "8d8fdfe1-62ab-4e60-9e67-834d6054e783",
       "name": "Gemini 2.5 Flash Lite",
       "credentials": {
         "googlePalmApi": {
@@ -280,10 +282,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        1520
+        -624,
+        128
       ],
-      "id": "040c3ef4-1b8c-4fb1-915a-496f4550f1aa",
+      "id": "8afd8559-53b8-4679-90eb-85c7949e513e",
       "name": "Prepare Document Payload"
     },
     {
@@ -293,10 +295,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        1648
+        -624,
+        288
       ],
-      "id": "8e05a119-b428-4145-b8d4-6614a35b0221",
+      "id": "7e83abe5-7309-46e8-9e06-d73e3ca70e47",
       "name": "Prepare Interface Payload"
     },
     {
@@ -306,10 +308,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        704,
-        1856
+        -608,
+        464
       ],
-      "id": "9f5ccaa0-ba9f-4d0b-a947-80f4b76443e2",
+      "id": "2cebc925-8b2a-4c09-ac8d-727343f31d0d",
       "name": "Prepare Management Payload"
     },
     {
@@ -319,54 +321,26 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        704,
-        2032
+        -608,
+        640
       ],
-      "id": "a1d21e31-80e2-4438-a2a8-9add74aaa6ac",
+      "id": "fd78ecbd-3378-4b62-a8d0-ff01a1370ecd",
       "name": "Prepare Scam Payload (Voice and Text)"
     },
     {
       "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "qY3XsgMkJYvOh0yo",
+          "value": "eCsQnkaS70Scimg0",
           "mode": "list",
-          "cachedResultUrl": "/workflow/qY3XsgMkJYvOh0yo",
-          "cachedResultName": "Scam"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {},
-          "matchingColumns": [],
-          "schema": [],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.3,
-      "position": [
-        1312,
-        1888
-      ],
-      "id": "2f54f4e2-0b02-4157-97b7-a5b14afb7d21",
-      "name": "Call 'Scam'"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "OWJWiKmASySFf41z",
-          "mode": "list",
-          "cachedResultUrl": "/workflow/OWJWiKmASySFf41z",
-          "cachedResultName": "Management"
+          "cachedResultUrl": "/workflow/eCsQnkaS70Scimg0",
+          "cachedResultName": "FamilIA - C4 Gestión Financiera"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
-            "user_id": "U001",
-            "text": "¿Me ha llegado la pensión?"
+            "user_id": "={{ $json.user_id || \"U001\" }}",
+            "text": "={{ $json.text }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -399,20 +373,20 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        1296,
-        1744
+        -16,
+        352
       ],
-      "id": "9945623f-1433-42c4-8a39-73220aa3d230",
-      "name": "Call 'Management'"
+      "id": "e557a382-172b-4fe6-ae74-2873e9f3168f",
+      "name": "Call 'FamilIA - C4 Gestión Financiera'"
     },
     {
       "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "oeDjuaP0lQKdJgdn",
+          "value": "8TY5eVGiuKfdAGHv",
           "mode": "list",
-          "cachedResultUrl": "/workflow/oeDjuaP0lQKdJgdn",
-          "cachedResultName": "Document Analysis"
+          "cachedResultUrl": "/workflow/8TY5eVGiuKfdAGHv",
+          "cachedResultName": "FamilIA - C1 Document Analysis"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -427,19 +401,20 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        1312,
-        1392
+        0,
+        0
       ],
-      "id": "29f85310-356a-407c-9da2-0e0a41e197e7",
-      "name": "Call 'Document Analysis'"
+      "id": "48f99f77-cd59-4832-a17d-cfd246303c24",
+      "name": "Call 'FamilIA - C1 Document Analysis'"
     },
     {
       "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "1VAnz1DxuAo1kTpo",
-          "mode": "id",
-          "cachedResultUrl": "/workflow/1VAnz1DxuAo1kTpo"
+          "value": "vFx8dPCGAy2cryYI",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/vFx8dPCGAy2cryYI",
+          "cachedResultName": "FamilIA - C3 Scam"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -454,13 +429,42 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        1296,
-        1568
+        0,
+        496
       ],
-      "id": "01ca70f5-9cbd-4302-92ca-c706e74762f2",
-      "name": "Call 'Interface'"
+      "id": "89e63f5c-ebaa-4c8b-a772-612c7600cd86",
+      "name": "Call 'FamilIA - C3 Scam'1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "9KQIKyj79zaJfvEs",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/9KQIKyj79zaJfvEs",
+          "cachedResultName": "FamilIA_Interface"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -16,
+        176
+      ],
+      "id": "d9729860-9f1f-450e-bfe1-ebe1457597fb",
+      "name": "Call 'FamilIA_Interface'"
     }
   ],
+  "pinData": {},
   "connections": {
     "Webhook": {
       "main": [
@@ -593,7 +597,7 @@
       "main": [
         [
           {
-            "node": "Call 'Document Analysis'",
+            "node": "Call 'FamilIA - C1 Document Analysis'",
             "type": "main",
             "index": 0
           }
@@ -604,7 +608,7 @@
       "main": [
         [
           {
-            "node": "Call 'Interface'",
+            "node": "Call 'FamilIA_Interface'",
             "type": "main",
             "index": 0
           }
@@ -615,7 +619,7 @@
       "main": [
         [
           {
-            "node": "Call 'Management'",
+            "node": "Call 'FamilIA - C4 Gestión Financiera'",
             "type": "main",
             "index": 0
           }
@@ -626,7 +630,7 @@
       "main": [
         [
           {
-            "node": "Call 'Scam'",
+            "node": "Call 'FamilIA - C3 Scam'1",
             "type": "main",
             "index": 0
           }
@@ -634,9 +638,16 @@
       ]
     }
   },
-  "pinData": {},
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "70142c61-1bf6-4c58-a4f5-eadd38dc9835",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
-  }
+  },
+  "id": "kYRyE7XxKz6iWmas",
+  "tags": []
 }

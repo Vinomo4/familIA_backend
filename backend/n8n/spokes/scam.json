@@ -1,4 +1,5 @@
 {
+  "name": "FamilIA - C3 Scam",
   "nodes": [
     {
       "parameters": {
@@ -53,10 +54,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -960,
-        192
+        560,
+        0
       ],
-      "id": "92a574d9-f87f-4e91-8d1c-e867eba7a063",
+      "id": "8cc8713a-3f7d-474c-bdbd-25b40e88cd5e",
       "name": "Edit Fields"
     },
     {
@@ -67,10 +68,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        -1168,
-        400
+        352,
+        208
       ],
-      "id": "2c69f840-fb10-4a55-87e8-49fa236aa7ee",
+      "id": "86ea21fe-065a-4eec-b5d9-0566a59bffdd",
       "name": "Scam Output Schema"
     },
     {
@@ -80,16 +81,16 @@
         "hasOutputParser": true,
         "needsFallback": true,
         "options": {
-          "systemMessage": "Act as an expert analyst in cognitive security and social engineering detection for elderly users. Your objective is to evaluate the transcribed text of a conversation or phone call and calculate a coercion index or scam risk score (0-100).\n\nStrictly analyze the text for the following risk patterns:\n1. Artificial urgency (e.g., 'you must do this right now', 'it is urgent').\n2. Requests for sensitive data (e.g., credentials, security tokens, SMS verification codes, or PINs).\n3. Latent or explicit threats (e.g., 'your account will be frozen', 'legal action', 'fines').\n4. Impersonation of authority figures (e.g., fake tech support, bank representatives, police officers).\n\nYou must strictly map the final output to the provided JSON schema. Ensure that:\n- 'risk_score' is an integer from 0 to 100.\n- 'brief_explanation' is a concise, neutral summary in Spanish for the family member's dashboard audit log, explaining the objective threat detected.\n- 'user_defense_guidance' is written in Spanish, specifically tailored for an elderly person experiencing high anxiety. Use short, calm, and reassuring sentences. Avoid all technical jargon (never use words like 'phishing', 'token', 'link', 'SMS', or 'malware'). Give clear, protective, and non-alarmist instructions (e.g., 'No te preocupes, no has hecho nada malo. Cuelga el teléfono tranquilamente. No les digas ningún número').\n- 'coercion_tactics' is an array of strings listing the identified patterns in Spanish (e.g., 'Urgencia temporal', 'Petición de claves')."
+          "systemMessage": "Actúa como un asistente de seguridad para personas mayores. Tu tarea es analizar el texto recibido y detectar posibles señales de estafa, presión o manipulación.\n\nDebes devolver siempre una respuesta breve, clara y tranquila en español.\n\nNo digas que has bloqueado una operación, cancelado un pago, avisado al banco, llamado a un familiar, denunciado nada ni protegido la cuenta automáticamente. La app solo puede analizar el mensaje y dar una recomendación.\n\nSi detectas riesgo, recomienda acciones simples que el usuario sí puede hacer:\n- No pagar ni hacer transferencias.\n- No dar códigos, claves, contraseñas ni datos bancarios.\n- No pulsar enlaces sospechosos.\n- Colgar o dejar de responder.\n- Contactar con la entidad correspondiente usando un canal oficial: banco, compañía eléctrica, empresa de mensajería, administración pública u otra entidad real.\n- Usar siempre un número oficial buscado por el usuario o que aparezca en una factura anterior fiable, tarjeta bancaria, contrato o web oficial. No usar el teléfono ni el enlace que venga en el mensaje sospechoso.\n- Preguntar a un familiar o persona de confianza.\n\nSi no detectas riesgo claro, indica que no hay señales graves, pero recomienda prudencia.\n\nEl campo user_defense_guidance debe ser corto, calmado y accionable. Máximo 2 frases.\n\nEl campo brief_explanation debe explicar el motivo en una sola frase.\n\nEl campo coercion_tactics debe ser una lista breve de tácticas detectadas. Si no hay tácticas claras, usa [\"Sin señales claras de coerción\"].\n\nNo uses lenguaje alarmista. No generes respuestas largas. No incluyas información fuera del JSON."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -1312,
-        192
+        208,
+        0
       ],
-      "id": "2fdb1ed1-dac1-4dcd-8d8e-fa11461a55df",
+      "id": "55177d42-0d08-40cb-abba-84d2d4d1abe0",
       "name": "NLP Coercion Scorer"
     },
     {
@@ -97,10 +98,10 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1,
       "position": [
-        -1520,
-        192
+        0,
+        0
       ],
-      "id": "64ed15dd-4654-4571-8783-1a277f7e6aa4",
+      "id": "047719de-3365-4423-93a0-2dddbb4d9330",
       "name": "Execute Workflow Trigger"
     },
     {
@@ -111,15 +112,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -1488,
-        432
+        32,
+        240
       ],
-      "id": "bce48948-9978-4cd3-ac26-3af5130903b0",
+      "id": "60ce3b94-1f3f-4c7c-96d6-df875681d5ca",
       "name": "Gemini 3.1 Flash Lite",
       "credentials": {
         "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
         }
       }
     },
@@ -131,19 +132,20 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -1312,
-        480
+        208,
+        288
       ],
-      "id": "cd214e38-fcf3-478f-8f32-fab13bb750fd",
+      "id": "c07ec6d2-c4f0-4092-abea-f4d5ac56b238",
       "name": "Gemini 2.5 Flash Lite",
       "credentials": {
         "googlePalmApi": {
-          "id": "QzxmHwaWUUgkEiKe",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "6gsgL86eJ7F1cTAX",
+          "name": "Google Gemini(PaLM) Api account 2"
         }
       }
     }
   ],
+  "pinData": {},
   "connections": {
     "Scam Output Schema": {
       "ai_outputParser": [
@@ -201,9 +203,16 @@
       ]
     }
   },
-  "pinData": {},
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "dc8dfc25-8cf0-49d2-8d41-24b9cec78703",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7eca2c52f524e916128cc549fa93e46a6782d1578febc66989b43ed0d9c3629f"
-  }
+  },
+  "id": "vFx8dPCGAy2cryYI",
+  "tags": []
 }
